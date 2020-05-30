@@ -9,7 +9,6 @@
 		<param-value>
 		/WEB-INF/spring/root-context.xml
 		classpath:database/jdbc-config.xml
-		classpath:common/context-common.xml
 		</param-value>
 	</context-param>
 	

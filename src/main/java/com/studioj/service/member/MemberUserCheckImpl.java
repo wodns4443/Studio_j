@@ -11,13 +11,13 @@ import org.springframework.ui.Model;
 
 import com.studioj.dao.MemberDAO;
 import com.studioj.dto.MemberDTO;
+import com.studioj.service.member.MemberService;
 @Service
 public class MemberUserCheckImpl implements MemberService{
 	@Autowired
 	private MemberDAO dao;
 	@Autowired
 	private MemberDTO dto;
-	
 	@Override
 	public int execute(Model model) {
 		// TODO Auto-generated method stub
@@ -33,7 +33,7 @@ public class MemberUserCheckImpl implements MemberService{
 		if(result == 0) {
 			HttpSession session = request.getSession();
 			String chkId = request.getParameter("id");
-			String admin = "admin";
+			String admin = "123";
 			if(chkId.equals(admin)) {
 				session.setAttribute("userId", "admin");
 			}else {

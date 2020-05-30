@@ -1,4 +1,4 @@
-package com.studioj.service;
+package com.studioj.service.member;
 
 import java.util.Map;
 

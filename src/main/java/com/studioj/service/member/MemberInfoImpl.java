@@ -25,12 +25,8 @@ public class MemberInfoImpl implements MemberService{
 		HttpServletRequest request = (HttpServletRequest)map.get("request");
 		HttpSession session = request.getSession();
 		String id = (String)session.getAttribute("userId");
-		model.addAttribute("dto",dao.userCheck(id));
+		model.addAttribute("members",dao.memberInfo(id));
 		return 0;
 	}
 
- 
-
 }
-
-

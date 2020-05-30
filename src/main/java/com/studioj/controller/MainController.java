@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import com.studioj.service.MemberDelImpl;
-import com.studioj.service.MemberInfoImpl;
-import com.studioj.service.MemberUpDataImpl;
-import com.studioj.service.MemberUserCheckImpl;
-import com.studioj.service.RegisterServiceImpl;
-import com.studioj.service.SearchCheckImpl;
-import com.studioj.service.MemberService;
+import com.studioj.service.member.MemberDelImpl;
+import com.studioj.service.member.MemberInfoImpl;
+import com.studioj.service.member.MemberService;
+import com.studioj.service.member.MemberUpDataImpl;
+import com.studioj.service.member.MemberUserCheckImpl;
+import com.studioj.service.member.RegisterServiceImpl;
+import com.studioj.service.member.SearchCheckImpl;
 
 @Controller
 public class MainController {
@@ -76,29 +76,7 @@ public class MainController {
 		}
 		return "redirect:index";
 	}
-	@RequestMapping("gallery")
-	public String gallery(Model model) {
-		System.out.println("gallery 실행!!!");
-		return "studioj/gallery";
-	}
-	@RequestMapping("upload")
-	public String upload(MultipartHttpServletRequest mtf) throws Exception {
-		System.out.println("upload 실행!!!");
-		// 파일 태그
-		String fileTag = "file";
-	    // 업로드 파일이 저장될 경로
-		String filePath = "C:\\temp\\";
-		// 파일 이름	
-		MultipartFile file = mtf.getFile(fileTag);
-		String fileName = file.getOriginalFilename();
-		// 파일 전송
-		try {
-		    file.transferTo(new File(filePath + fileName));
-		} catch(Exception e) {
-		    System.out.println("업로드 오류");
-		}
-		return"studioj/upload";
-	}
+	
 	@RequestMapping("intro")
 	public String intro(Model model) {
 		System.out.println("intro 실행!!!");

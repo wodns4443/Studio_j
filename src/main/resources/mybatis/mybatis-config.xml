@@ -6,5 +6,9 @@
 <configuration>
    <typeAliases>
 		<typeAlias alias="dto" type="com.studioj.dto.MemberDTO"/>
+		<typeAlias alias="idto" type="com.studioj.dto.InquireDTO"/>
+  		<typeAlias alias="edto" type="com.studioj.dto.EventDTO"/>
+  		<typeAlias alias="bdto" type="com.studioj.dto.GalleryBoardDTO"/>
+  		<typeAlias alias="fdto" type="com.studioj.dto.GalleryDTO"/>
    </typeAliases>
 </configuration>

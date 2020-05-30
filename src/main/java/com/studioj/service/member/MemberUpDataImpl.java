@@ -1,9 +1,8 @@
-package com.studioj.service;
+package com.studioj.service.member;
 
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,7 +12,7 @@ import com.studioj.dao.MemberDAO;
 import com.studioj.dto.MemberDTO;
 
 @Service
-public class MemberInfoImpl implements MemberService{
+public class MemberUpDataImpl implements MemberService{
 	@Autowired
 	private MemberDAO dao;
 	@Autowired
@@ -23,10 +22,13 @@ public class MemberInfoImpl implements MemberService{
 		// TODO Auto-generated method stub
 		Map<String, Object> map = model.asMap();
 		HttpServletRequest request = (HttpServletRequest)map.get("request");
-		HttpSession session = request.getSession();
-		String id = (String)session.getAttribute("userId");
-		model.addAttribute("members",dao.memberInfo(id));
-		return 0;
+		dto.setId(request.getParameter("id"));
+		dto.setPw(request.getParameter("pw"));
+		dto.setName(request.getParameter("name"));
+		dto.setNick(request.getParameter("nick"));
+		dto.setTel(request.getParameter("tel"));
+		dto.setMail(request.getParameter("mail"));
+		return dao.upData(dto);
 	}
 
 }

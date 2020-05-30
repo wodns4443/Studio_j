@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.studioj.mybatis.myMapper">
+	<select id="register" resultType="com.studioj.dto.MemberDTO">
+		insert into studioj_member (id,pw,name,nick,mail,tel,quiz,mservice,sms) values(#{id},#{pw},#{name},#{nick},#{mail},#{tel},#{quiz},#{mservice},#{sms});
+	</select>
+	<select id="userCheck" resultType="com.studioj.dto.MemberDTO">
+		select * from studioj_member where id = #{id}
+	</select>
+	<select id="searchCheck" resultType="com.studioj.dto.MemberDTO">
+		select * from studioj_member where quiz = #{quiz}
+	</select>
+	<select id="memberInfo" resultType="com.studioj.dto.MemberDTO">
+		select * from studioj_member where id = #{id}
+	</select>
+	<select id="upData" resultType="int">
+		update studioj_member set pw=#{pw}, name=#{name}, nick=#{nick}, tel=#{tel}, mail=#{mail} where id=#{id}
+	</select>
+	<select id="delete" resultType="int">
+		delete from studioj_member where id = #{id}
+	</select>
+	<!-- <select id="userCheck" resultType="com.care.dto.MemberDTO">
+		select * from member02 where id = #{id}
+	</select>
+	<select id="listAll" resultType="com.care.dto.MemberDTO">
+		Select * from member02
+	</select>
+	<select id="memberData" resultType="com.care.dto.MemberDTO">
+		select * from member02 where id = #{id}
+	</select>
+	<select id="saveData" resultType="dto">
+	 	insert into member02 values(#{id},#{pw})
+	</select>
+	<select id="start">
+		insert into loglog(id,log) values(#{id},'로그인됬슴둥')
+	</select>
+	<select id="end">
+		insert into loglog(id,log) values(#{id},'로그아웃됬슴둥')
+	</select>
+	<select id="logAll" resultType="com.care.dto.LogDTO">
+		Select * from loglog
+	</select>
+	<select id="boardList" resultType="com.care.dto.BoardDTO">
+		select * from mvc_board order by idgroup desc,step asc
+	</select>
+	<select id="getMaxNum" resultType="int">
+		Select max(id) from mvc_board
+	</select>
+	<select id="writeSave" resultType="int">
+		insert into mvc_board(id,name,title,content,idgroup,step,indent) values(#{id},#{name},#{title},#{content},#{idgroup},0,0)
+	</select>
+	<select id="contentView" resultType="com.care.dto.BoardDTO">
+		select * from mvc_board where id = #{id}
+	</select>
+	<select id="modify" resultType="int">
+		update mvc_board set name=#{name}, title=#{title}, content=#{content} where id=#{id}
+	</select>
+	<select id="delete" resultType="int">
+		delete from mvc_board where id = #{id}
+	</select>
+	<select id="replyView" resultType="com.care.dto.BoardDTO">
+		select * from mvc_board where id = #{id}
+	</select>
+	<select id="reply" resultType="int">
+		insert into mvc_board(id,name,title,content,idgroup,step,indent) values(#{id},#{name},#{title},#{content},#{idgroup},#{step}+1,#{indent}+1)
+	</select>
+	<select id="upHit" resultType="com.care.dto.BoardDTO">
+		update mvc_board set hit=hit+1 where id = #{id}
+	</select>
+	<select id="replyShape" resultType="com.care.dto.BoardDTO">
+		update mvc_board set step=step+1 where idgroup=#{idgroup} and step>#{step}
+	</select> -->
+	
+</mapper>

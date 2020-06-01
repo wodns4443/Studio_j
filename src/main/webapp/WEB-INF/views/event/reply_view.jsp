@@ -10,10 +10,9 @@
 </head>
 <body>
 <c:import url="../default/header.jsp"/>
-
 <div align="center">
 <h3>답글 달기</h3>
-	<form action="reply" method ="post">
+	<form action="eventReply" method ="post">
 	<input type="hidden" name="num" value="${dto.num }">
 	<input type="hidden" name="idgroup" value="${dto.idgroup }">
 	<input type="hidden" name="step" value="${dto.step }">
@@ -29,7 +28,7 @@
 		</tr>
 		<tr>
 			<td colspan="2" style="text-align: center;">
-			<input type="button" onclick="location.href='contentView?num=${dto.num}'" value = "취소">&nbsp;&nbsp;
+			<input type="button" onclick="location.href='eventContent?num=${dto.num}'" value = "취소">&nbsp;&nbsp;
 			<input type="submit" value="작성 완료">
 			</td>
 		</tr>
@@ -39,6 +38,8 @@
 	
 </div>
 
+
+
+
 </body>
-</html>	
-	
+</html>

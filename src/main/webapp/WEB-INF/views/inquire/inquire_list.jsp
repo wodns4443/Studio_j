@@ -29,7 +29,7 @@
 <div class="content" align="center">
 	<div style ="width:60%;text-align:right;">TOTAL ${totContent }</div>
 
-	<table width="60%">
+	<table style="width:60%;">
 		<tr>
 		<th>번호</th><th width="70%">제목</th><th>글쓴이</th><th>조회</th>
 		</tr>

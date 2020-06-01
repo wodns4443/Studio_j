@@ -61,6 +61,9 @@
 		<tr>
 			<td style="background-color: #EAEAEA;">${redto.name }</td>
 			<td><textarea style="border:none;"rows="3" cols="100" readonly="readonly">${redto.content }</textarea></td>
+		<c:if test="${redto.name.equals(userId) || admin!=null}">
+			<td style="width:20%;"><button onclick="location.href='replyDel?num=${redto.num}&&idgroup=${redto.idgroup }'">삭제</button></td>
+		</c:if>
 		</tr>
 		</c:forEach>
 	</table>

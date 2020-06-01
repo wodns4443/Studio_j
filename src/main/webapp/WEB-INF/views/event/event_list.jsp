@@ -25,7 +25,7 @@
 <body>
 <c:import url="../default/header.jsp"/>
 
-<div align="center">
+<div class="content" align="center">
 	<h2>이벤트</h2>
 	
 	<table width="60%">
@@ -48,7 +48,15 @@
 			
 		</tr>
 		</c:forEach>
+		
+		
 	</table>
+	 <c:if test="${admin !=null }">
+	 <br>
+	 <div style="width:60%; text-align: right;">
+         	<button onclick="location.href='event_write'">글쓰기</button>
+     </div>
+     </c:if>
 	
 	<br>
 	<div style ="width:60%;text-align:center;a:link { color: black; text-decoration: none;}
@@ -68,6 +76,7 @@
             <a href="event?page=${cnt }">[${cnt }]</a>
           
          </c:forEach>
+        
          
          <c:choose>
             <c:when test="${page <totPage }">

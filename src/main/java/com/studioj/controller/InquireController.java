@@ -15,6 +15,7 @@ import com.studioj.service.inquire.InquireListImpl;
 import com.studioj.service.inquire.InquireModifyImpl;
 import com.studioj.service.inquire.InquireModifySaveImpl;
 import com.studioj.service.inquire.InquirePwCheckImpl;
+import com.studioj.service.inquire.InquireReplyDelImpl;
 import com.studioj.service.inquire.InquireReplyImpl;
 import com.studioj.service.inquire.InquireReplyViewImpl;
 import com.studioj.service.inquire.InquireSearchImpl;
@@ -113,6 +114,14 @@ public class InquireController {
 		is = ac.getBean("inquireReplyImpl", InquireReplyImpl.class);
 		is.execute(model);
 		return "inquire/content_view";
+	}
+	@RequestMapping("replyDel")
+	public String replyDel(Model model,HttpServletRequest request) {
+		model.addAttribute("request",request);
+		is = ac.getBean("inquireReplyDelImpl",InquireReplyDelImpl.class);
+		is.execute(model);
+		
+		return "redirect:contentView";
 	}
 	
 	@RequestMapping("inquiresearch")

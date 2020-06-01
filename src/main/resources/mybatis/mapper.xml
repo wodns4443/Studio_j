@@ -72,6 +72,9 @@
 	<delete id = "inquireDelete">
 		delete from studioj_inquire where num=#{num}
 	</delete>
+	<delete id="replyDel">
+		delete from studioj_inquire where num=#{num}
+	</delete>
 	
 	
 <!-- 
@@ -102,7 +105,34 @@
  	<select id ="eContentView" resultType="edto">
 		select * from studioj_event where num =#{num}
 	</select>
+ 	<update id="eventModify">
+		update studioj_event set title=#{title}, content=#{content} where num=#{num}
+	</update>
+	<delete id = "eventDelete">
+		delete from studioj_event where num=#{num}
+	</delete>
+	<select id ="eventGetMaxNum" resultType="int">
+		select max(num) from studioj_event
+	</select>
+	<insert id="eWriteSave">
+		insert into studioj_event(num,title,content,idgroup,step,indent) values(#{num},#{title},#{content},#{idgroup},0,0)
+	</insert>
+ 	<update id = "eReplyShap" parameterType="edto">
+		update studioj_event set step=step+1 where idgroup=#{idgroup} and step>#{step}
+	</update>
+	<insert id ="eReply">
+		insert into studioj_event(num,name,content,idgroup,step,indent) values(#{num},#{name},#{content},#{idgroup},#{step}+1,#{indent}+1)
+	</insert>
+	<update id="eReplyup">
+		update studioj_event set replyhit=replyhit+1 where idgroup=#{num} and step=0
+	</update>
  
+ 	<select id ="eReplyList" resultType="edto">
+		select * from studioj_event where idgroup =#{num} and step>0
+	</select>
+ 	<delete id="eReplyDel">
+		delete from studioj_event where num=#{num}
+	</delete>
  
  <!-- 갤러리! -->
  

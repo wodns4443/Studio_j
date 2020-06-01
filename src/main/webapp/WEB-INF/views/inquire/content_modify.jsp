@@ -33,7 +33,7 @@
 			</tr>
 			<tr>
 				<td style="background-color: #EAEAEA;">내용</td>
-				<td><textarea rows="30" cols="100" name="content" >${dto.content }</textarea></textarea>
+				<td><textarea rows="30" cols="100" name="content" >${dto.content }</textarea>
 			</tr>
 			<tr>
 			<td colspan="2" style="text-align: center;">

@@ -54,6 +54,9 @@ public class InquireDAO {
 	public void replyup(int num) {
 		sqlSession.update(inamespace+".replyup",num);
 	}
+	public void replyDel(InquireDTO dto) {
+		sqlSession.delete(inamespace+".replyDel",dto);
+	}
 	
 	public List<InquireDTO> searchTitle(String str){
 		return sqlSession.selectList(inamespace+".searchTitle",str);

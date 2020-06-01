@@ -9,27 +9,27 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import com.studioj.dao.EventDAO;
+import com.studioj.dto.EventDTO;
 
 @Service
-public class EventContentViewImpl implements EventService{
+public class EventReplyDelImpl implements EventService{
 
 	@Autowired
 	EventDAO dao;
-	
+	@Autowired
+	EventDTO dto;
 	@Override
 	public int execute(Model model) {
 		Map<String, Object> map = model.asMap();
 		HttpServletRequest request = (HttpServletRequest) map.get("request");
+		dto.setNum(Integer.parseInt(request.getParameter("num")));
 		
-		int num = Integer.parseInt(request.getParameter("num"));
-		dao.uphit(num);
+		dao.replyDel(dto);
+		model.addAttribute("num",Integer.parseInt(request.getParameter("idgroup")));
 		
-		model.addAttribute("dto",dao.eContentView(num));
-		model.addAttribute("relist",dao.replyList(num));
+		
 		return 0;
 	}
-
-	
 
 	
 }

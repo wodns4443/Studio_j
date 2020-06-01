@@ -1,7 +1,7 @@
 package com.studioj.controller;
 
 import javax.servlet.http.HttpServletRequest;
-
+import javax.servlet.http.HttpSession;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
@@ -10,7 +10,10 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.studioj.service.inquire.InquireContentViewImpl;
+import com.studioj.service.inquire.InquireDeleteImpl;
 import com.studioj.service.inquire.InquireListImpl;
+import com.studioj.service.inquire.InquireModifyImpl;
+import com.studioj.service.inquire.InquireModifySaveImpl;
 import com.studioj.service.inquire.InquirePwCheckImpl;
 import com.studioj.service.inquire.InquireReplyImpl;
 import com.studioj.service.inquire.InquireReplyViewImpl;
@@ -22,7 +25,7 @@ import com.studioj.service.member.MemberInfoImpl;
 import com.studioj.service.member.MemberService;
 
 @Controller
-public class StudioController {
+public class InquireController {
 
 	ApplicationContext ac = App.ac;
 	private InquireService is;
@@ -65,11 +68,20 @@ public class StudioController {
 	public String content_pwcheck(HttpServletRequest request, Model model) {
 		model.addAttribute("request",request);
 		
+		
+		
 		is= ac.getBean("inquireSecretCheck",InquireSecretCheck.class);
 		if(is.execute(model)==1) {
+			
+			HttpSession session =request.getSession();
+			if(session.getAttribute("admin")!=null) {
+				return "redirect:contentView";
+			}
+			
 			return "inquire/content_pwcheck";
 		}
 		else return "redirect:contentView";
+		
 	}
 	@RequestMapping("inquirepwcheck")
 	public String inquirepwcheck(HttpServletRequest request,Model model) {
@@ -111,6 +123,28 @@ public class StudioController {
 		return "/inquire/search_list";
 	}
 	
+	@RequestMapping("inquireModify")
+	public String inquireModify(Model model, HttpServletRequest request) {
+		model.addAttribute("request",request);
+		is = ac.getBean("inquireModifyImpl",InquireModifyImpl.class);
+		is.execute(model);
+		return "/inquire/content_modify";
+	}
+	@RequestMapping("inquireModifySave")
+	public String inquireModifySave(Model model, HttpServletRequest request) {
+		model.addAttribute("request",request);
+		is = ac.getBean("inquireModifySaveImpl",InquireModifySaveImpl.class);
+		is.execute(model);
+		
+		return "redirect:contentView";
+	}
+	@RequestMapping("inquireDel")
+	public String inquireDel(Model model, HttpServletRequest request) {
+		model.addAttribute("request",request);
+		is= ac.getBean("inquireDeleteImpl",InquireDeleteImpl.class);
+		is.execute(model);
+		return "redirect:inquire";
+	}
 	
 
 }

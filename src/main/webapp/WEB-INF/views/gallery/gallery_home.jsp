@@ -11,11 +11,12 @@
 <body>
 <c:import url="../default/header.jsp"/>
 갤러리 홈 
-
+	<c:if test="${admin != null }">
 	<div align="center">
 	
 		<button onclick="location.href='imgWriteView'">사진 등록</button>
 	</div>
+	</c:if>
 <div align="center">
 	<table width="100%">
 		<tr>

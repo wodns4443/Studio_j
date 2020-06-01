@@ -26,7 +26,7 @@
 </head>
 <body>
 <c:import url="../default/header.jsp"/>
-<div align="center">
+<div class="content" align="center">
 	<div style ="width:60%;text-align:right;">TOTAL ${totContent }</div>
 
 	<table width="60%">

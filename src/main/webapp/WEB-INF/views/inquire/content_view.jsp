@@ -34,10 +34,23 @@
 				<td><textarea rows="30" cols="100" name="content" readonly="readonly">${dto.content }</textarea></textarea>
 			</tr>
 			<tr>
-				<td colspan="2" style="text-align:right;">
+				<td colspan = "2">
+				<c:if test="${userId== dto.name}">
+				<div style="text-align:left;">
+					<button onclick="location.href='inquireModify?num=${dto.num}'">수정</button> &nbsp;&nbsp;
+					<button onclick="location.href='inquireDel?num=${dto.num}'">삭제</button>
+				</div>
+				</c:if>
+				<c:if test="${admin!=null }">
+				<div style="text-align:left;">
+					<button onclick="location.href='inquireDel?num=${dto.num}'">삭제</button>
+				</div>
+				</c:if>
+				
+				<div style="text-align:right;">
 				<button onclick="location.href='inquire'">목록으로</button>&nbsp;&nbsp;
 				<button onclick="location.href='replyView?num=${dto.num}'">답글달기</button>&nbsp;&nbsp;
-		
+				</div>
 				</td>
 			</tr>
 		</table>
@@ -47,7 +60,7 @@
 		<c:forEach items="${relist }" var = "redto">
 		<tr>
 			<td style="background-color: #EAEAEA;">${redto.name }</td>
-			<td><textarea rows="3" cols="100" readonly="readonly">${redto.content }</textarea></td>
+			<td><textarea style="border:none;"rows="3" cols="100" readonly="readonly">${redto.content }</textarea></td>
 		</tr>
 		</c:forEach>
 	</table>

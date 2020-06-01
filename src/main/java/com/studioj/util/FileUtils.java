@@ -25,7 +25,7 @@ import com.studioj.dto.GalleryDTO;
 @Component("fileUtils")
 public class FileUtils {
 
-private static final String filePath = "/Users/raptor/Desktop/JAVA/spring-workspace/STUDIO_J/src/main/webapp/resources/image/fileUpDown/"; // 파일이 저장될 위치
+private static final String filePath = "/Users/raptor/Desktop/dev/Studio_j/src/main/webapp/resources/image/fileUpDown/"; // 파일이 저장될 위치
 	
 	public List<Map<String, Object>> parseInsertFileInfo(GalleryBoardDTO dto, 
 			MultipartHttpServletRequest mpRequest) throws Exception{

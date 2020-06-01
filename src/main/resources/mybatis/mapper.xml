@@ -66,15 +66,18 @@
 	<select id = "searchName" resultType="idto">
 		select * from studioj_inquire where name like #{str}
 	</select>
-	
-<!-- 
-	<delete id = "del">
-		delete from carehp_board where id =#{id}
+	<update id="inquireModify">
+		update studioj_inquire set title=#{title}, content=#{content} where num=#{num}
+	</update>
+	<delete id = "inquireDelete">
+		delete from studioj_inquire where num=#{num}
 	</delete>
 	
-	<update id="modify">
-		update carehp_board set name=#{name}, title=#{title}, content=#{content} where id=#{id}
-	</update>
+	
+<!-- 
+
+	
+
 	<select id = "replyView" resultType="dto">
 		select * from carehp_board where id =#{id}
 	</select>

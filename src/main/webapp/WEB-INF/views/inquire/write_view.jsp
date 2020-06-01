@@ -32,7 +32,7 @@
 		<table style="width:60%;">
 			<tr>
 				<td style="background-color: #EAEAEA;">이름</td>
-				<td><input type="text" name="name" value="${dto.name }" readonly="readonly"></td>
+				<td><input type="text" name="name" value="${userId }" readonly="readonly"></td>
 				<td>비밀글 <input type="checkbox" name="secret" value="1">
 			</tr>
 			<tr>

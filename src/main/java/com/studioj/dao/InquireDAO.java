@@ -65,8 +65,12 @@ public class InquireDAO {
 		return sqlSession.selectList(inamespace+".searchName",str);
 	}
 	
-	
-	
+	public void modify(InquireDTO dto) {
+		sqlSession.update(inamespace+".inquireModify",dto);
+	}
+	public void del(int num) {
+		sqlSession.delete(inamespace+".inquireDelete",num);
+	}
 	
 	
 	

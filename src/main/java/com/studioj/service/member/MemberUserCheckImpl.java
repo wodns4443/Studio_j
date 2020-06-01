@@ -35,7 +35,8 @@ public class MemberUserCheckImpl implements MemberService{
 			String chkId = request.getParameter("id");
 			String admin = "123";
 			if(chkId.equals(admin)) {
-				session.setAttribute("userId", "admin");
+				session.setAttribute("admin", request.getParameter("id"));
+				session.setAttribute("userId", request.getParameter("id"));
 			}else {
 				session.setAttribute("userId", request.getParameter("id"));
 			}

@@ -10,7 +10,7 @@
 <body>
 <c:import url="../default/header.jsp"/>
 	<div align="center">
-		<img src="${pageContext.request.contextPath}/resources/images/company_intro_img.jpg">
+		<img src="${pageContext.request.contextPath}/resources/image/company_intro_img.jpg">
 	</div>
 <c:import url="../default/footer.jsp"/>
 </body>

@@ -9,9 +9,14 @@
 	<script src="/resources/bootstrap/js/bootstrap.min.js"></script>
 	
 	<style type="text/css">
-		a:link { color: white; text-decoration: none;}
-		a:visited { color: white; text-decoration: none;}
-		a:hover { color: #CC9900; text-decoration: none;}
+		.header a:link { color: white; text-decoration: none;}
+		.header a:visited { color: white; text-decoration: none;}
+		.header a:hover { color: #CC9900; text-decoration: none;}
+	</style>
+	<style type="text/css">
+		.content a:link { color: black; text-decoration: none;}
+		.content a:visited { color: black; text-decoration: none;}
+		.content a:hover { color: #CC9900; text-decoration: none;}
 	</style>
 	<style type="text/css">
 		ul li{	display:inline;	padding:0 10px; }
@@ -21,6 +26,7 @@
 	</style> -->
 </head>
 <body>
+<div class="header">
 	<header>
 	<div style="text-align:right; background-color: black; color: white;">
 		<c:if test = '${userId != null}'> <a href="logout">로그아웃</a> </c:if>
@@ -47,5 +53,6 @@
 		<hr>
 	</div>
 	</header>
+</div>
 </body>
 </html>

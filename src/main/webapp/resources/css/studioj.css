@@ -1,0 +1,74 @@
+@charset "utf-8";
+
+/* Common */
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select{margin:0;padding:0}
+body,input,textarea,select,button,table{font-family:'돋움',dotum,sans-serif;font-size:12px}
+img,fieldset{border:0}
+ul,ol{list-style:none}
+em,address{font-style:normal}
+a{text-decoration:none}
+a:hover,a:active,a:focus{text-decoration:none}
+caption,legend,hr{display:none}
+table,th,td{border:none;border-spacing:0;border-collapse:collapse;text-align:left;}
+
+/* preset */
+.vm{vertical-align:middle !important}
+.vt{vertical-align:top !important}
+.bn{border:none !important}
+.bgn{background:none !important}
+.al{text-align:left !important}
+.fl{float:left !important}
+.fr{float:right !important}
+.chk,.rdo{width:14px;height:14px;margin:-1px 0 0 0 !important;padding:0 !important;vertical-align:middle}
+.chk_label{position:relative;top:0;*top:2px;left:0px}
+.blind{overflow:hidden;position:absolute;visibility:hidden;width:0;height:0;font-size:0;line-height:0}
+
+
+
+#bodywrap { text-align:center;}
+/*muscle{background:#f7f7f7 url(../../images/muscle/m_body_bg.gif) repeat-x left top;}*/
+#bodywrap_studio{background:#ffffff;margin:0 auto;text-align:center; height: 100%;}
+#port_top{position:relative;width:1028px;height:30px;margin:0 auto;}
+#port_top .link_port{position:absolute;top:0;left:0;}
+#port_top .link_port li{display:inline;float:left;}
+#port_top .site_link{position:absolute;top:8px;right:0px;}
+#port_top .site_link li{display:inline-block;float:left;margin:0;padding:0 7px;background:url(../../images/common/site_line.gif) no-repeat right 3px;}
+#port_top .site_link li.last{padding:0 0 0 7px;background:none;}
+#port_top .site_link li a{display:inline-block;color:#95969e;font-size:11px;line-height:14px;}
+#port_top .site_link li a.link_more{padding:0 12px 0 0;background:url(../../images/common/site_bul.gif) no-repeat right 5px;}
+#header_1{ position:relative;margin:0 auto;padding:0;width:100%;height:70px;opacity:0.8;background-color:#000; }
+#header_1 ul { width: 1024px; margin: 0 auto; text-align:right; position:relative;}
+#header_1 li { display: inline-block; /*width: 150px;*/ height:70px; line-height:70px; padding: 0 20px; vertical-align:top; text-align:center;}
+#header_1 li.header_logo {padding:0; position:absolute; top:0; left:0;}
+#header_1 li:last-child { padding-right: 0; }
+#header_1 li img { vertical-align: middle;}
+
+.bodywrap_header{ width:100%;text-align:center;margin:0 auto;padding:0;height:97px;position:absolute;top:0;left:0; z-index: 9999; }
+
+
+
+
+.footer{text-align:center;}
+#finfo{display:block;margin:0;padding:15px 0;width:100%;background:#fff;}
+#finfo ul{margin:0 auto;width:218px;*zoom:1;}
+#finfo ul:after {content:" ";display:block;visibility:hidden;clear:both;}
+#finfo ul li{display:inline;float:left;}
+#footer address{margin:14px 0 6px 0;height:26px;text-align:center;}
+#footer p{margin:0;text-align:center;}
+#rightscrapper {float:right;position:fixed;_position:absolute;top:0px;right:-17px;margin:0;padding:0;width:94px;height: 100%;display:block;border:solid 0px #000000;z-index:100000;}
+#rightscrapper span.button{position:absolute;top:50%;margin-top:-8px;left:-10px;z-index:9;}
+#plusMenu {position:absolute;top:0;right:0;padding:0;width:35px;height:100%;display:none;z-index:20000}
+#plusBox {position:absolute;top:0;right:0;padding:0;height:100%;z-index:20;}
+#plusMenu .sky_menu li .m {display:block;overflow:hidden;position:relative;width:100%;height:43px;line-height:43px;text-align:left;text-indent:-1000px;}
+
+
+.maincontent { text-align:left;margin:0 auto;width:1028px;}
+.notice { width:521px;height:289px;border:1px solid #ddd;}
+
+
+.title { height:40px;line-height:40px; text-align:left; width:1028px; margin:0 auto;}
+.pageframe {border-top:2px solid #565656;margin:0 auto;border-left:1px solid #dfdcdc; border-right:1px solid #dfdcdc;border-bottom:1px solid #dfdcdc;
+background:#fff;margin-bottom:30px;padding:0px; width:1028px;}
+
+.pageframe_content {border-top:2px solid #565656;margin:0 auto;border-left:1px solid #dfdcdc; border-right:1px solid #dfdcdc;border-bottom:1px solid #dfdcdc;
+background:#fff;margin-bottom:30px;padding:30px;}

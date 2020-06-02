@@ -39,9 +39,10 @@ table,th,td{border:none;border-spacing:0;border-collapse:collapse;text-align:lef
 #header_1{ position:relative;margin:0 auto;padding:0;width:100%;height:70px;opacity:0.8;background-color:#000; }
 #header_1 ul { width: 1024px; margin: 0 auto; text-align:right; position:relative;}
 #header_1 li { display: inline-block; /*width: 150px;*/ height:70px; line-height:70px; padding: 0 20px; vertical-align:top; text-align:center;}
-#header_1 li.header_logo {padding:0; position:absolute; top:0; left:0;}
+#header_1 li.header_logo {padding:0; position:absolute; top:0; left:0; }
 #header_1 li:last-child { padding-right: 0; }
 #header_1 li img { vertical-align: middle;}
+
 
 .bodywrap_header{ width:100%;text-align:center;margin:0 auto;padding:0;height:97px;position:absolute;top:0;left:0; z-index: 9999; }
 

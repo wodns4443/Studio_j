@@ -20,8 +20,8 @@
 					position: absolute; top: 0; left: 0; overflow: hidden; }
 	.login_wrap { width: 100%; background-color: #000; padding: 5px 0; }
 	.login_header { width: 990px; margin: 0 auto; text-align: right; }
-	.login_header span.login_line { color: #888; padding: 0 5px; }
-	.login_header span a { color: #fff; font-size: 12px; }
+	.login_header span.login_line { color: #FFFFFF; padding: 0 5px; }
+	.login_header span a { color: #FFFFFF; font-size: 12px; }
 	.studio_view_list { position: absolute; top: 70px; left: 43.5%;background-color: #000; display: none;}
 	.studio_view_list ul {width: 120px !important;}
 	.studio_view_list li { display: block !important; padding: 0 20px !important; }
@@ -77,13 +77,16 @@
 
 		<div id="header_1">
 			<ul>
-				<li class="header_logo"><a href="index">STUIDO J 이미지</a></li>
-				<li><a href="intro">StudioJ소개</a></li>
-				<li><a href="gallery">갤러리</a></li>
-				<li><a href="inquire">예약|문의</a></li>
-				<li><a href="guide">촬영안내|구매</a></li>
-				<li><a href="event">이벤트</a></li>
-				<li><a href="map">지점안내</a></li>
+				<li class="header_logo">
+					<a href="index">
+					<img src="${pageContext.request.contextPath}/resources/image/logo_w.png" style="width: 120px; height: 55px;">
+					</a></li>
+				<li><a href="intro" style="color: #999; font-size: 20px;">StudioJ소개</a></li>
+				<li><a href="gallery" style="color: #999; font-size: 20px;">갤러리</a></li>
+				<li><a href="inquire" style="color: #999; font-size: 20px;">예약&middot;문의</a></li>
+				<li><a href="guide" style="color: #999; font-size: 20px;">촬영안내&middot;구매</a></li>
+				<li><a href="event" style="color: #999; font-size: 20px;">이벤트</a></li>
+				<li><a href="map" style="color: #999; font-size: 20px;">지점안내</a></li>
 			</ul>
 			<hr>
 		</div>

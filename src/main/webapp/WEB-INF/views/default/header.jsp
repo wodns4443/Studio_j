@@ -27,7 +27,7 @@
 </head>
 <body>
 <div class="header">
-	<header>
+	
 	<div style="text-align:right; background-color: black; color: white;">
 		<c:if test = '${userId != null}'> <a href="logout">로그아웃</a> </c:if>
 		<c:if test = '${userId == null}'> <a href="login">로그인</a> </c:if>
@@ -52,7 +52,7 @@
 		</ul>
 		<hr>
 	</div>
-	</header>
+	
 </div>
 </body>
 </html>

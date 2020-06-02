@@ -97,7 +97,7 @@ private static final String filePath = "/Users/raptor/Desktop/dev/Studio_j/src/m
 		try {
 			BufferedImage srcImg = ImageIO.read(new File(filePathh));
 			//썸네일 크기 
-			int dw=200, dh = 500;
+			int dw=400, dh = 600;
 			
 			//원본 사이즈 
 			int ow = srcImg.getWidth();

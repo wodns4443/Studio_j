@@ -43,7 +43,14 @@ public class GalleryController {
 		return "redirect:gallery";
 	}
 	
-	
+//	@RequestMapping("viewOriginImg")
+//	public String vieweOriginImg(Model model, HttpServletRequest request) {
+//		model.addAttribute("request",request);
+//		
+//		gs = ac.getBean("",)
+//		
+//		return "";
+//	}
 	
 	
 	

@@ -9,6 +9,10 @@
 </head>
 <body>
 <c:import url="../default/header.jsp"/>
+<c:import url="../default/header2.jsp"/>
+
+
+
 
 <c:import url="../default/footer.jsp"/>
 </body>

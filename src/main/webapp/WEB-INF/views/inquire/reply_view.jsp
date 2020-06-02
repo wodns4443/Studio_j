@@ -10,6 +10,7 @@
 </head>
 <body>
 <c:import url="../default/header.jsp"/>
+<c:import url="../default/header2.jsp"/>
 
 <div align="center">
 <h3>답글 달기</h3>

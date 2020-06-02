@@ -24,6 +24,7 @@
 </head>
 <body>
 <c:import url="../default/header.jsp"/>
+<c:import url="../default/header2.jsp"/>
 
 <div class="content" align="center">
 	<h2>이벤트</h2>

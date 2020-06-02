@@ -7,9 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="upload" method="post" enctype="multipart/form-data">
-	    <input type="file" name="file" placeholder="파일 선택"/>
-	    <input type="submit" value="업로드"/>
-	</form>
+<div style="background-color: white;margin:150px;"></div>
+
+
+
 </body>
 </html>

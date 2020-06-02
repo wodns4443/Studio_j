@@ -30,7 +30,7 @@
 	<!-- <link rel="stylesheet" href="/resources/bootstrap/css/bootstrap.css" >
 	<link rel="stylesheet" href="/resources/bootstrap/css/bootstrap-theme.css" >
 	<script src="/resources/bootstrap/js/bootstrap.min.js"></script>
-	
+	 -->
 	<style type="text/css">
 		.header a:link { color: white; text-decoration: none;}
 		.header a:visited { color: white; text-decoration: none;}
@@ -46,7 +46,7 @@
 	</style>
 	<style>
 		header {position:absolute;}
-	</style> -->
+	</style>
 </head>
 <body>
 

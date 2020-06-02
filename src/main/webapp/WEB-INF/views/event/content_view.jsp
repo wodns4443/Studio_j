@@ -11,6 +11,8 @@
 </head>
 <body>
 <c:import url="../default/header.jsp"/>
+<c:import url="../default/header2.jsp"/>
+
 
 <div align="center">
 <table style="width:50%;text-align: center;">

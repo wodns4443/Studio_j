@@ -60,6 +60,8 @@
 </head>
 <body>
 <c:import url="../default/header.jsp"/>
+<c:import url="../default/header2.jsp"/>
+
 	<div align="center">
 	<form id="fo" action="register_save">
 		<div>

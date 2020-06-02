@@ -25,6 +25,8 @@
 <body>
 <c:import url="../default/header.jsp"/>
 <fmt:requestEncoding value="utf-8"/>
+<c:import url="../default/header2.jsp"/>
+
 <div align="center">
 	<h3>이벤트 글쓰기</h3>
 	<form action="event_write_save" method="post">

@@ -32,6 +32,7 @@
 	</script>
 <body>
 <c:import url="../default/header.jsp"/>
+<c:import url="../default/header2.jsp"/>
 
 
 		<div id="root">

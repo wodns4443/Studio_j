@@ -10,6 +10,8 @@
 </head>
 <body>
 <c:import url="../default/header.jsp"/>
+<c:import url="../default/header2.jsp"/>
+
 <div align="center">
 <form action ="eventModifySave" method="post">
 <input type="hidden" name="num" value="${dto.num }">

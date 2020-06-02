@@ -10,26 +10,28 @@
 
 <style>
 
-  table {
-    
+ .content table {
     border-top: 1px solid #444444;
     border-collapse: collapse;
   }
-  th, td {
+  .tb th, td {
     border-bottom: 1px solid #444444;
     padding: 10px;
   }
 
 </style>
-
+	<style type="text/css">
+		ul li{	display:inline;	padding:0 10px; }
+	</style>
 
 </head>
 <body>
 <c:import url="../default/header.jsp"/>
+<c:import url="../default/header2.jsp"/>
 <div class="content" align="center">
 	<div style ="width:60%;text-align:right;">TOTAL ${totContent }</div>
 
-	<table style="width:60%;">
+	<table class="tb" style="width:60%;">
 		<tr>
 		<th>번호</th><th width="70%">제목</th><th>글쓴이</th><th>조회</th>
 		</tr>

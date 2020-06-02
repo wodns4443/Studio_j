@@ -24,6 +24,8 @@
 </head>
 <body>
 <c:import url="../default/header.jsp"/>
+<c:import url="../default/header2.jsp"/>
+
 <fmt:requestEncoding value="utf-8"/>
 
 <div align="center">

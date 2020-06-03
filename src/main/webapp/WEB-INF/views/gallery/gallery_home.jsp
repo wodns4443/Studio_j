@@ -78,10 +78,9 @@
 		<td width="25%"><button onclick="document.getElementById('modal${i.index}').style.display='block'; document.getElementById('mask').style.display='block'" style="border-color: #00ff0000; border=0; outline=none;"><img id="modal_open" style="cursor:pointer;" src="${pageContext.request.contextPath}/resources/image/fileUpDown/THUMB_${fdto.stored_file_name }"></button></td>
 		<%--  --%>
 	
-		<div class ="modalDiv" align="center" id="modal${i.index }" onclick="document.getElementById('modal${i.index}').style.display='none';document.getElementById('mask').style.display='none'">
+		<div class ="modalDiv" align="center" id="modal${i.index }" onclick="document.getElementById('modal${i.index}').style.display='none'; document.getElementById('mask').style.display='none'">
 			
-			<img width="522px" height="auto" src = "${pageContext.request.contextPath}/resources/image/fileUpDown/${fdto.stored_file_name }">
-			<!-- <div class="modal_layer" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0, 0, 0, 0.5); z-index:9999;"></div> -->
+			<img width="auto" height="750" src = "${pageContext.request.contextPath}/resources/image/fileUpDown/${fdto.stored_file_name }">
 				
 		</div>
 		<div id = "mask"></div>
@@ -95,10 +94,7 @@
 		</tr>
 	</table>
 	
-	<div id="img-modal">
-		<span onclick="imgModalClose();">X</span>
-		<img id="img-modal-content">
-	</div>
+
 
 
 </div>

@@ -51,7 +51,7 @@
 <body>
 
 
-	<div class="bodywrap_header">
+	<div class="bodywrap_header" style="position: fixed;">
 		<div class="login_wrap">
 			<div class="login_header">
 

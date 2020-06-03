@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>아이디/비밀번호 찾기 | 스튜디오U</title>
 </head>
 <body>
 <c:import url="../default/header.jsp"/>

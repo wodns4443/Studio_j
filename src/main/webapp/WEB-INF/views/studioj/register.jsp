@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>회원 가입 약관 | 스튜디오U</title>
 <script type="text/javascript">
 function chkData(){
 	var chk01 = document.getElementById("chk01").checked;

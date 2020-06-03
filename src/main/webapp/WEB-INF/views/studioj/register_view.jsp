@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>회원 가입 | 스튜디오U</title>
 <script type="text/javascript">
 	function pwchk(){
 		pw1 = document.getElementById("pw1").value;

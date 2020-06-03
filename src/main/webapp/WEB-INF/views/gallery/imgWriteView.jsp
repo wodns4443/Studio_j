@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>이미지 등록 | 스튜디오U</title>
 </head>
 <script type="text/javascript">
 		$(document).ready(function(){

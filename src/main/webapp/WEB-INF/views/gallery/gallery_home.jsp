@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>갤러리 | 스튜디오U</title>
 <style>
 	.thumb img {
 		max-width: 100%;
@@ -60,8 +60,13 @@
 <c:import url="../default/header.jsp"/>
 <c:import url="../default/header2.jsp"/>
 
-갤러리 홈 
+
 <div class="thumbnail-wrapper" align="center">
+	<div>
+		<img src="${pageContext.request.contextPath}/resources/image/gallery.png">
+	</div>
+	<br>
+	<br>
 	<c:if test="${admin != null }">
 	<div align="center">
 	

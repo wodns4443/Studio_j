@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>이벤트 수정 | 스튜디오U</title>
 </head>
 <body>
 <c:import url="../default/header.jsp"/>

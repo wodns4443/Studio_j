@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>스튜디오U</title>
 	<link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/home.css">
 	<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->

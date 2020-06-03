@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>검색 목록 | 스튜디오U</title>
 <style>
 
   table {

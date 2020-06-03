@@ -86,6 +86,7 @@
 	
 
 
+<c:import url="../default/footer.jsp"/>
 
 </div>
 </body>

@@ -8,13 +8,19 @@
 <meta charset="UTF-8">
 <title>갤러리 | 스튜디오U</title>
 <style>
-	.thumb img {
-		max-width: 100%;
-		heigth:auto;
+	img {
+		display:block;
+		margin:0;
+		padding:0;
 	}
+	table , td{
+		 margin:0;padding:0;border-collapse:collapse; border-spacing:0;
+	}
+
 	.thumbnail-wrrapper{
 		width:25%;
 	}
+	
 	.modalDiv{display:none;
 	cursor: pointer; 
 	 top: 5%;
@@ -30,28 +36,7 @@
 
 	
 </style>
-<!-- <style>
 
-#modal {
-  display:none;
-  position:absolute; width:100%; height:100%; z-index:1;
-}
-
-
-
-#modal button {
-  display:inline-block; width:100px; margin-left:calc(100% - 100px - 10px);
-}
-
-#modal .modal_content {
-  width:300px; margin:100px auto; padding:20px 10px; background:#fff; border:2px solid #666;
-}
-
-#modal .modal_layer {
-  position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0, 0, 0, 0.5); z-index:-1;
-}   
-</style>
- -->
 
 
 
@@ -75,12 +60,12 @@
 	</c:if>
 	
 
-	<table style="width:100%;">
+	<table>
 		<tr>
 		
 		<c:forEach items="${imgList }" var="fdto" varStatus="i">
 		
-		<td width="25%"><button onclick="document.getElementById('modal${i.index}').style.display='block'; document.getElementById('mask').style.display='block'" style="border-color: #00ff0000; border=0; outline=none;"><img id="modal_open" style="cursor:pointer;" src="${pageContext.request.contextPath}/resources/image/fileUpDown/THUMB_${fdto.stored_file_name }"></button></td>
+		<td width="25%"><button onclick="document.getElementById('modal${i.index}').style.display='block'; document.getElementById('mask').style.display='block'" style="border-color: #00ff0000; border=0; outline=none;"><img style="cursor:pointer;" src="${pageContext.request.contextPath}/resources/image/fileUpDown/THUMB_${fdto.stored_file_name }"></button></td>
 		<%--  --%>
 	
 		<div class ="modalDiv" align="center" id="modal${i.index }" onclick="document.getElementById('modal${i.index}').style.display='none'; document.getElementById('mask').style.display='none'">

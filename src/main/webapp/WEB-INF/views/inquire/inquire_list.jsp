@@ -10,11 +10,11 @@
 
 <style>
 
- .content table {
+ table {
     border-top: 1px solid #444444;
     border-collapse: collapse;
   }
-  .tb th, td {
+   th, td {
     border-bottom: 1px solid #444444;
     padding: 10px;
   }

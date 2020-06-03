@@ -15,52 +15,44 @@
 	.thumbnail-wrrapper{
 		width:25%;
 	}
+	.modalDiv{display:none;
+	cursor: pointer; 
+	 top: 5%;
+	 position:fixed; z-index: 10000; overflow: auto; padding: 0px; left: 50%;transform:translateX(-50%);}
+	#mask {   position: fixed;
+        width: 100%;
+        height: 1000px;
+        top: 0px;
+        left: 0px;
+         display: none; 
+         background-color:#000;
+         opacity: 0.8; }
+
+	
 </style>
-<style>
+<!-- <style>
 
 #modal {
   display:none;
-  position:absolute;
-  width:100%;
-  height:100%;
-  z-index:1;
+  position:absolute; width:100%; height:100%; z-index:1;
 }
 
 
 
 #modal button {
-  display:inline-block;
-  width:100px;
-  margin-left:calc(100% - 100px - 10px);
+  display:inline-block; width:100px; margin-left:calc(100% - 100px - 10px);
 }
 
 #modal .modal_content {
-  width:300px;
-  margin:100px auto;
-  padding:20px 10px;
-  background:#fff;
-  border:2px solid #666;
+  width:300px; margin:100px auto; padding:20px 10px; background:#fff; border:2px solid #666;
 }
 
 #modal .modal_layer {
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:rgba(0, 0, 0, 0.5);
-  z-index:-1;
+  position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0, 0, 0, 0.5); z-index:-1;
 }   
 </style>
+ -->
 
-<script>
-	function popup(name){
-		var popimg = document.getElementById("poppop");
-		poppop.src = "${pageContext.request.contextPath}/resources/image/fileUpDown/"+name;
-        document.getElementById("modal${i.index}").style.display="block";
-		console.log(poppop.src);
-	}
-</script>
 
 
 </head>
@@ -78,31 +70,23 @@
 	</c:if>
 	
 
-	<table width="100%">
+	<table style="width:100%;">
 		<tr>
 		
 		<c:forEach items="${imgList }" var="fdto" varStatus="i">
 		
-		<td width="25%"><img id="modal_open" style="cursor:pointer;" onclick="popup(${fdto.stored_file_name })" src="${pageContext.request.contextPath}/resources/image/fileUpDown/THUMB_${fdto.stored_file_name }"></td>
+		<td width="25%"><button onclick="document.getElementById('modal${i.index}').style.display='block'; document.getElementById('mask').style.display='block'" style="border-color: #00ff0000; border=0; outline=none;"><img id="modal_open" style="cursor:pointer;" src="${pageContext.request.contextPath}/resources/image/fileUpDown/THUMB_${fdto.stored_file_name }"></button></td>
+		<%--  --%>
 	
-	
-		<div id="modal" >
-			<div class="modal_content">
-			<img id ="poppop"src = "${pageContext.request.contextPath}/resources/image/fileUpDown/${fdto.stored_file_name }">
-			<button type="button" id="modal_close">X</button>
-			</div>
-		
-			<div class="modal_layer"></div>
+		<div class ="modalDiv" align="center" id="modal${i.index }" onclick="document.getElementById('modal${i.index}').style.display='none';document.getElementById('mask').style.display='none'">
+			
+			<img width="522px" height="auto" src = "${pageContext.request.contextPath}/resources/image/fileUpDown/${fdto.stored_file_name }">
+			<!-- <div class="modal_layer" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0, 0, 0, 0.5); z-index:9999;"></div> -->
+				
 		</div>
-		<script>
-/*     document.getElementById("modal_open").onclick = function() {
-        document.getElementById("modal${i.index}").style.display="block";
-    } */
-   
-    document.getElementById("modal_close").onclick = function() {
-        document.getElementById("modal${i.index}").style.display="none";
-    }   
-</script>
+		<div id = "mask"></div>
+		
+
 		<c:if test="${fdto.bno % 4 == 0 }">
 			</tr><tr>
 		</c:if>

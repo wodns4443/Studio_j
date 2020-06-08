@@ -16,22 +16,22 @@
 		<form action="upData" method="get">
 			<table>
 			<tr>
-				<th>아이디</th><td><input type="text" name="id" value="${members.id }" readonly></td>
+				<th>아이디</th><td><input type="text" name="id" value="${dto.id }" readonly></td>
 			</tr>
 			<tr>
-				<th>비밀번호</th><td><input type="text" name="pw" value="${members.pw }"></td>
+				<th>비밀번호</th><td><input type="text" name="pw" value="${dto.pw }"></td>
 			</tr>
 			<tr>
-				<th>이름</th><td><input type="text" name="name" value="${members.name }"></td>
+				<th>이름</th><td><input type="text" name="name" value="${dto.name }"></td>
 			</tr>
 			<tr>
-				<th>전화번호</th><td><input type="text" name="tel" value="${members.tel }"></td>
+				<th>전화번호</th><td><input type="text" name="tel" value="${dto.tel }"></td>
 			</tr>
 			<tr>
-				<th>메일</th><td><input type="text" name="mail" value="${members.mail }"></td>
+				<th>메일</th><td><input type="text" name="mail" value="${dto.mail }"></td>
 			</tr>
 			</table>
-			<input type="submit" value="수정"><input type="button" value="삭제" onclick="location.href='delete?id=${members.id}'">
+			<input type="submit" value="수정"><input type="button" value="삭제" onclick="location.href='delete?id=${dto.id}'">
 		</form>
 	</div>
 	

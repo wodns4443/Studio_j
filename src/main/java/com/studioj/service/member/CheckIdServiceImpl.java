@@ -11,8 +11,9 @@ import org.springframework.ui.Model;
 
 import com.studioj.dao.MemberDAO;
 import com.studioj.dto.MemberDTO;
+
 @Service
-public class SearchCheckImpl implements MemberService{
+public class CheckIdServiceImpl implements MemberService{
 	@Autowired
 	private MemberDAO dao;
 	@Autowired
@@ -22,16 +23,15 @@ public class SearchCheckImpl implements MemberService{
 		// TODO Auto-generated method stub
 		Map<String, Object> map = model.asMap();
 		HttpServletRequest request = (HttpServletRequest)map.get("request");
-		String quiz = request.getParameter("quiz");
+		String tel = request.getParameter("tel");
 		int result = 1;
-		dto = dao.searchCheck(quiz);
+		dto = dao.checkId(tel);
 		if(dto != null) {
-			if(dto.getQuiz().equals(quiz)) result=0;
+			if(dto.getTel().equals(tel)) result=0;
 		}
 		if(result == 0) {
 			HttpSession session = request.getSession();
 			session.setAttribute("id", dto.getId());
-			session.setAttribute("pw", dto.getPw());
 		}
 		return result;
 	}

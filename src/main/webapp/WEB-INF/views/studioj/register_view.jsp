@@ -24,10 +24,9 @@
 		pw1 = document.getElementById("pw1").value;
 		pw2 = document.getElementById("pw2").value;
 		name = document.getElementById("name").value;
-		nick = document.getElementById("nick").value;
 		mail = document.getElementById("mail").value;
 		tel = document.getElementById("tel").value;
-		quiz = document.getElementById("quiz").value;
+		reply = document.getElementById("reply").value;
 		if( id == ""){
 			alert("아이디는 필수 사항입니다.");
 			location.href="register_view";
@@ -40,17 +39,14 @@
 		} else if(name == ""){
 			alert("이름은 필수 사항입니다.");
 			location.href="register_view";
-		} else if(nick == ""){
-			alert("닉네임은 필수 사항입니다.");
-			location.href="register_view";
 		} else if(mail == ""){
 			alert("메일은 필수 사항입니다.");
 			location.href="register_view";
 		} else if(tel == ""){
 			alert("휴대폰번호는 필수 사항입니다.");
 			location.href="register_view";
-		} else if(quiz == ""){
-			alert("힌트는 필수 사항입니다.");
+		} else if(reply == ""){
+			alert("질문정답은 필수 사항입니다.");
 			location.href="register_view";
 		} else {
 			fo.submit();
@@ -89,9 +85,6 @@
 				<th>이름*</th><td><input type="text" name="name" id="name"></td>
 			</tr>
 			<tr>
-				<th>닉네임*</th><td><input type="text" name="nick" id="nick"></td>
-			</tr>
-			<tr>
 				<th>E-mail*</th><td><input type="text" name="mail" id="mail"></td>
 			</tr>
 			<tr>
@@ -100,15 +93,15 @@
 			<tr>
 				<th>질문선택</th>
 				<td>
-				<select size="1" name="test" style="width:130px;height:20px;">
-					<option value="p1" selected>아버지 성함
-					<option value="p2">출신 초등학교
-					<option value="p2">나의 별명
+				<select size="1" name="quiz" style="width:130px;height:20px;">
+					<option value="아버지 성함" selected>아버지 성함
+					<option value="출신 초등학교">출신 초등학교
+					<option value="나의 별명">나의 별명
 				</select>
 				</td>
 			</tr>
 			<tr>
-				<th>정답*</th><td><input type="text" name="quiz" id="quiz"></td>
+				<th>정답*</th><td><input type="text" name="reply" id="reply"></td>
 			</tr>
 		</table>
 		</div>

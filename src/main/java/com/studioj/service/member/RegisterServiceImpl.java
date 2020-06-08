@@ -27,10 +27,10 @@ public class RegisterServiceImpl implements MemberService{
 		dto.setId(request.getParameter("id"));
 		dto.setPw(request.getParameter("pw"));
 		dto.setName(request.getParameter("name"));
-		dto.setNick(request.getParameter("nick"));
 		dto.setMail(request.getParameter("mail"));
 		dto.setTel(request.getParameter("tel"));
 		dto.setQuiz(request.getParameter("quiz"));
+		dto.setReply(request.getParameter("reply"));
 		boolean chk = true;
 		String mservice = request.getParameter("mservice");
 		String sms = request.getParameter("sms");

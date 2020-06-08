@@ -21,8 +21,11 @@ public class MemberDAO {
 	public MemberDTO userCheck(String id) {
 		return sqlSession.selectOne(namespace + ".userCheck",id);
 	}
-	public MemberDTO searchCheck(String quiz) {
-		return sqlSession.selectOne(namespace + ".searchCheck",quiz);
+	public MemberDTO checkId(String tel) {
+		return sqlSession.selectOne(namespace + ".checkId",tel);
+	}
+	public MemberDTO checkPw(String id) {
+		return sqlSession.selectOne(namespace + ".checkPw",id);
 	}
 	public MemberDTO memberInfo(String id) {
 		return sqlSession.selectOne(namespace + ".memberInfo",id);

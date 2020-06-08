@@ -7,10 +7,10 @@ public class MemberDTO {
 	private String id;
 	private String pw;
 	private String name;
-	private String nick;
 	private String mail;
 	private String tel;
 	private String quiz;
+	private String reply;
 	private boolean mservice;
 	private boolean sms;
 	
@@ -33,12 +33,6 @@ public class MemberDTO {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getNick() {
-		return nick;
-	}
-	public void setNick(String nick) {
-		this.nick = nick;
-	}
 	public String getMail() {
 		return mail;
 	}
@@ -56,6 +50,12 @@ public class MemberDTO {
 	}
 	public void setQuiz(String quiz) {
 		this.quiz = quiz;
+	}
+	public String getReply() {
+		return reply;
+	}
+	public void setReply(String reply) {
+		this.reply = reply;
 	}
 	public boolean isMservice() {
 		return mservice;

@@ -25,9 +25,6 @@
 				<th>이름</th><td><input type="text" name="name" value="${members.name }"></td>
 			</tr>
 			<tr>
-				<th>닉네임</th><td><input type="text" name="nick" value="${members.nick }"></td>
-			</tr>
-			<tr>
 				<th>전화번호</th><td><input type="text" name="tel" value="${members.tel }"></td>
 			</tr>
 			<tr>

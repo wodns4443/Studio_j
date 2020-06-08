@@ -34,7 +34,9 @@
 			<div class="login_info">
 			<div class="login_member_enter"><a href="register">회원 가입</a></div>
 			<div>|</div>
-			<div class="login_member_text"><a href="searchId">아이디 비밀번호 찾기</a></div>
+			<div class="login_member_text"><a href="searchId">아이디 찾기</a></div>
+			<div>|</div>
+			<div class="login_member_text"><a href="searchPw">비밀번호 찾기</a></div>
 			</div>
 		</fieldset>
 	</form>

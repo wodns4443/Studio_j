@@ -4,19 +4,22 @@
 
 <mapper namespace="com.studioj.mybatis.myMapper">
 	<select id="register" resultType="com.studioj.dto.MemberDTO">
-		insert into studioj_member (id,pw,name,nick,mail,tel,quiz,mservice,sms) values(#{id},#{pw},#{name},#{nick},#{mail},#{tel},#{quiz},#{mservice},#{sms});
+		insert into studioj_member (id,pw,name,mail,tel,quiz,reply,mservice,sms) values(#{id},#{pw},#{name},#{mail},#{tel},#{quiz},#{reply},#{mservice},#{sms});
 	</select>
 	<select id="userCheck" resultType="com.studioj.dto.MemberDTO">
 		select * from studioj_member where id = #{id}
 	</select>
-	<select id="searchCheck" resultType="com.studioj.dto.MemberDTO">
-		select * from studioj_member where quiz = #{quiz}
+	<select id="checkId" resultType="com.studioj.dto.MemberDTO">
+		select * from studioj_member where tel = #{tel}
+	</select>
+	<select id="checkPw" resultType="com.studioj.dto.MemberDTO">
+		select * from studioj_member where id = #{id}
 	</select>
 	<select id="memberInfo" resultType="com.studioj.dto.MemberDTO">
 		select * from studioj_member where id = #{id}
 	</select>
 	<select id="upData" resultType="int">
-		update studioj_member set pw=#{pw}, name=#{name}, nick=#{nick}, tel=#{tel}, mail=#{mail} where id=#{id}
+		update studioj_member set pw=#{pw}, name=#{name}, tel=#{tel}, mail=#{mail} where id=#{id}
 	</select>
 	<select id="delete" resultType="int">
 		delete from studioj_member where id = #{id}

@@ -1,7 +1,5 @@
 package com.studioj.controller;
 
-import java.io.File;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -10,16 +8,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import com.studioj.service.member.CheckIdServiceImpl;
 import com.studioj.service.member.MemberDelImpl;
 import com.studioj.service.member.MemberInfoImpl;
 import com.studioj.service.member.MemberService;
 import com.studioj.service.member.MemberUpDataImpl;
 import com.studioj.service.member.MemberUserCheckImpl;
 import com.studioj.service.member.RegisterServiceImpl;
-import com.studioj.service.member.SearchCheckImpl;
+import com.studioj.service.member.CheckPwServiceImpl;
 
 @Controller
 public class MainController {
@@ -97,16 +94,32 @@ public class MainController {
 		System.out.println("searchId 실행!!!");
 		return "studioj/searchId";
 	}
-	@RequestMapping("search")
-	public String search(HttpServletRequest request,Model model) {
-		System.out.println("search 실행!!!");
+	@RequestMapping("checkId")
+	public String checkId(HttpServletRequest request,Model model) {
+		System.out.println("checkId 실행!!!");
 		model.addAttribute("request",request);
-		ss = ac.getBean("searchCheckImpl",SearchCheckImpl.class);
+		ss = ac.getBean("checkIdServiceImpl",CheckIdServiceImpl.class);
+		int result = ss.execute(model);
+		if(result == 0) {
+			return "studioj/checkId_view";
+		}
+		return "redirect:searchId";
+	}
+	@RequestMapping("searchPw")
+	public String searchPw(Model model) {
+		System.out.println("searchPw 실행!!!");
+		return "studioj/searchPw";
+	}
+	@RequestMapping("checkPw")
+	public String checkPw(HttpServletRequest request,Model model) {
+		System.out.println("checkPw 실행!!!");
+		model.addAttribute("request",request);
+		ss = ac.getBean("checkPwServiceImpl",CheckPwServiceImpl.class);
 		int result = ss.execute(model);
 		if(result == 0) {
 			return "studioj/search_view";
 		}
-		return "redirect:searchId";
+		return "redirect:searchPw";
 	}
 	@RequestMapping("memberInfo")
 	public String memberInfo(HttpServletRequest request,Model model) {

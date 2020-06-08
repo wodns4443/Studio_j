@@ -1,5 +1,7 @@
 package com.studioj.service.inquire;
 
+import java.util.List;
+
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -7,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.studioj.dao.InquireDAO;
 import com.studioj.dto.InquireDTO;
@@ -14,16 +17,21 @@ import com.studioj.dto.InquireDTO;
 @Service
 public class InquireWriteImpl implements InquireService{
 
+	
+
 	@Autowired
 	InquireDAO dao;
 	@Autowired
 	InquireDTO dto;
+
+	
 	@Override
 	public int execute(Model model) {
 		int maxNum = dao.getMaxNum();
 		maxNum++;
 		Map<String, Object> map = model.asMap();
 		HttpServletRequest request = (HttpServletRequest) map.get("request");
+
 		int secret=0;
 		if(request.getParameter("secret")!=null) {
 			secret = Integer.parseInt(request.getParameter("secret"));

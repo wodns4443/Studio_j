@@ -72,7 +72,6 @@
 										<button class="write_btn" type="submit">작성</button>	
 									</td>
 								</tr>	
-							</>
 							
 							
 						</tbody>			

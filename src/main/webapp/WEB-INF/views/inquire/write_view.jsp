@@ -8,6 +8,24 @@
 <head>
 <meta charset="UTF-8">
 <title>게시글 작성 | 스튜디오U</title>
+<script type="text/javascript">
+function checkDisable(form)
+{
+    if( form.secret.checked == false ){
+   form.pw.disabled = true;
+
+} else 
+
+{
+
+   form.pw.disabled = false;
+
+}
+
+}
+
+
+</script>
 <style>
 
   table {
@@ -35,15 +53,17 @@
 			<tr>
 				<td style="background-color: #EAEAEA;">이름</td>
 				<td><input type="text" name="name" value="${userId }" readonly="readonly"></td>
-				<td>비밀글 <input type="checkbox" name="secret" value="1">
+				<td>비밀글 <input type="checkbox" name="secret" value="1" onClick="checkDisable(this.form)"></td>
 			</tr>
-			<tr>
+			
+			<!-- <tr>
 				<td style="background-color: #EAEAEA;">글 비밀번호</td>
 				<td colspan="2"><input type="text" name="pw"></td>
-			</tr>
+			</tr> -->
 			<tr>
 				<td style="background-color: #EAEAEA;">이메일</td>
-				<td colspan="2"><input type="email" name="email" value="${dto.mail }"></td>
+				<td><input type="email" name="email" value="${dto.mail }"></td>
+				<td><input type="text" name="pw" value="비밀번호" disabled></td>
 			</tr>
 			<tr>
 				<td style="background-color: #EAEAEA;">연락처</td>
@@ -67,7 +87,9 @@
 		</table>
 	</form>
 </div>
-
+<script>
+	
+</script>
 
 
 

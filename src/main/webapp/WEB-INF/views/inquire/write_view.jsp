@@ -51,7 +51,7 @@ function checkDisable(form)
 	<form action="write_save" method="post">
 		<table style="width:60%;">
 			<tr>
-				<td style="background-color: #EAEAEA;">이름</td>
+				<td style="background-color: #EAEAEA;">작성자</td>
 				<td><input type="text" name="name" value="${userId }" readonly="readonly"></td>
 				<td>비밀글 <input type="checkbox" name="secret" value="1" onClick="checkDisable(this.form)"></td>
 			</tr>

@@ -21,7 +21,7 @@
 	<input type="hidden" name="indent" value="${dto.indent }">
 	<table style="width:40%;">
 		<tr>
-			<td style="background-color: #EAEAEA;">이름</td>
+			<td style="background-color: #EAEAEA;">작성자</td>
 			<td><input style="border=none;"type="text" name="name" value="${userId }" readOnly></td>
 		</tr>
 		<tr>

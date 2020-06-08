@@ -15,7 +15,7 @@
 <div align="center">
 <table style="width:45%;text-align: center;">
 			<tr>
-				<td style="width:10%;background-color: #EAEAEA;">이름</td>
+				<td style="width:10%;background-color: #EAEAEA;">작성자</td>
 				<td>${dto.name }</td>
 			</tr>
 			<tr>

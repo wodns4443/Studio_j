@@ -61,8 +61,7 @@ public class InquireController {
 	}
 
 	@RequestMapping("write_save")
-	public String write_save(Model model, MultipartHttpServletRequest mprequest, HttpServletRequest request) {
-		model.addAttribute("mprequest", mprequest);
+	public String write_save(Model model, HttpServletRequest request) {
 		model.addAttribute("request", request);
 		is = ac.getBean("inquireWriteImpl", InquireWriteImpl.class);
 		is.execute(model);

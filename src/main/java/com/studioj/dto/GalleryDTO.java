@@ -10,6 +10,8 @@ public class GalleryDTO {
 	private int file_no, bno, file_size;
 	private String org_file_name, stored_file_name,del_gb;
 	private Date regdate;
+	
+	
 	public int getFile_no() {
 		return file_no;
 	}

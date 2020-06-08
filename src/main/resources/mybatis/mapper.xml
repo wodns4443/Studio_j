@@ -78,7 +78,7 @@
 	<delete id="replyDel">
 		delete from studioj_inquire where num=#{num}
 	</delete>
-	
+
 	
 <!-- 
 

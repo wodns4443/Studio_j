@@ -1,6 +1,7 @@
 package com.studioj.controller;
 
 import javax.servlet.http.HttpServletRequest;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.context.ApplicationContext;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.studioj.service.inquire.InquireContentViewImpl;
 import com.studioj.service.inquire.InquireDeleteImpl;
@@ -59,7 +61,8 @@ public class InquireController {
 	}
 
 	@RequestMapping("write_save")
-	public String write_save(Model model, HttpServletRequest request) {
+	public String write_save(Model model, MultipartHttpServletRequest mprequest, HttpServletRequest request) {
+		model.addAttribute("mprequest", mprequest);
 		model.addAttribute("request", request);
 		is = ac.getBean("inquireWriteImpl", InquireWriteImpl.class);
 		is.execute(model);
@@ -154,6 +157,8 @@ public class InquireController {
 		is.execute(model);
 		return "redirect:inquire";
 	}
+	
+
 	
 
 }

@@ -102,35 +102,48 @@
 				</div>
 			</div>
 			
+			
+			<!-- 페이징  -->
 			<div class="board_page">
 			<nav class="pg_wrap">
 				<c:choose>
-				<c:when test="${page >1 }">
-					<%-- <button type="button" onclick="location.href='inquire?page=${page-1 }'">이전</button> --%>
-					<a href="inquire?page=${page-1 }" class="pg_page">이전</a>
+				<c:when test="${pager.prev }">
+					<a href="inquire?currentBlock=${pager.currentblock-1 }" class="pg_page">이전</a> 
 				</c:when>
 				<c:otherwise>
-					<a disabled="disabled" class="pg_page">이전</a>
-					<!-- <button type="button" disabled="disabled">이전</button> -->
+					<a disabled="disabled" class="pg_page" style="display: none;">이전</a> 
 				</c:otherwise>
-				</c:choose>
-				<c:forEach begin="1" end="${totPage }" step="1" var="cnt">
-				<a href="inquire?page=${cnt }" class="pg_page">${cnt }</a>
-				<%-- <strong class="pg_current">${cnt }</strong> --%>
-				</c:forEach>
+				</c:choose> 
+				
+				<!-- 번호 -->
+				<c:forEach begin="${pager.startPage }" end="${pager.endPage }" step="1" var="cnt">
 				<c:choose>
-				<c:when test="${page <totPage }">
-					<%-- <button type = "button" onclick="location.href='inquire?page=${page+1}'">다음</button> --%>
-					<a href="inquire?page=${page+1}" class="pg_page">다음</a>
+					<c:when test="${pager.pagenum == cnt }">
+						<strong class="pg_current">${cnt }</strong>
+
+					</c:when>
+					<c:otherwise>
+						<a href="inquire?page=${cnt }" class="pg_page">${cnt }</a>
+					</c:otherwise>
+				
+				</c:choose>
+				</c:forEach>
+				<!-- 번호끝  -->
+				
+			 <c:choose>
+				<c:when test="${pager.next }">
+					<a href="inquire?currentBlock=${pager.currentblock+1 }" class="pg_page" >다음</a>
 				</c:when>
 				<c:otherwise>
-					<!-- <button type="button" disabled="disabled">다음</button> -->
-					<a disabled="disabled" class="pg_page">다음</a>
+					<a disabled="disabled" class="pg_page" style="display: none;">다음</a>
 				</c:otherwise>
-				</c:choose>
+				</c:choose> 
 			</nav>
 			</div>
 			
+			<!-- 페이징 끝 -->
+			
+			<!--  검색  -->
 			<div class="board_search" style="width:100%">
 			<table border="0" cellpadding="0" cellspacing="0" width="100%">
 				<tbody>

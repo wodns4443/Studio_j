@@ -53,7 +53,7 @@
 			<td class="td_num">${dto.num}</td>
 			<td class="td_subject"><a href="eventContent?num=${dto.num}">${dto.title}</a></td>
 			<td class="td_name sv_use"><span class="sv_member">스튜디오U</span></td>
-			<td class="td_date"><fmt:formatDate value="${dto.savedate}" pattern="yyyy-MM-dd" /></td>
+			<td class="td_date"><fmt:formatDate value="${dto.savedate}" pattern="MM-dd" /></td>
 			<td class="td_num">${dto.hit}</td>
 		</tr>
 		</c:forEach>
@@ -72,32 +72,42 @@
 	</c:if>
 	</div>
 	
+	<!-- 페이징 -->
 	<div class="board_page">
 			<nav class="pg_wrap">
 				<c:choose>
-				<c:when test="${page >1 }">
-					<%-- <button type="button" onclick="location.href='inquire?page=${page-1 }'">이전</button> --%>
-					<a href="event?page=${page-1 }" class="pg_page">이전</a>
+				<c:when test="${pager.prev }">
+					<a href="event?currentBlock=${pager.currentblock-1 }" class="pg_page">이전</a> 
 				</c:when>
 				<c:otherwise>
-					<a disabled="disabled" class="pg_page">이전</a>
-					<!-- <button type="button" disabled="disabled">이전</button> -->
+					<a disabled="disabled" class="pg_page" style="display: none;">이전</a> 
 				</c:otherwise>
-				</c:choose>
-				<c:forEach begin="1" end="${totPage }" step="1" var="cnt">
-				<a href="event?page=${cnt }" class="pg_page">${cnt }</a>
-				<%-- <strong class="pg_current">${cnt }</strong> --%>
-				</c:forEach>
+				</c:choose> 
+				
+				
+				<!-- 번호 -->
+				<c:forEach begin="${pager.startPage }" end="${pager.endPage }" step="1" var="cnt">
 				<c:choose>
-				<c:when test="${page <totPage }">
-					<%-- <button type = "button" onclick="location.href='inquire?page=${page+1}'">다음</button> --%>
-					<a href="event?page=${page+1}" class="pg_page">다음</a>
+					<c:when test="${pager.pagenum == cnt }">
+						<strong class="pg_current">${cnt }</strong>
+
+					</c:when>
+					<c:otherwise>
+						<a href="event?page=${cnt }" class="pg_page">${cnt }</a>
+					</c:otherwise>
+				
+				</c:choose>
+				</c:forEach>
+				<!-- 번호 끝 -->
+				
+				 <c:choose>
+				<c:when test="${pager.next }">
+					<a href="event?currentBlock=${pager.currentblock+1 }" class="pg_page" >다음</a>
 				</c:when>
 				<c:otherwise>
-					<!-- <button type="button" disabled="disabled">다음</button> -->
-					<a disabled="disabled" class="pg_page">다음</a>
+					<a disabled="disabled" class="pg_page" style="display: none;">다음</a>
 				</c:otherwise>
-				</c:choose>
+				</c:choose> 
 			</nav>
 	</div>
 	

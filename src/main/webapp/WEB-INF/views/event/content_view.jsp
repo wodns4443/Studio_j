@@ -8,6 +8,8 @@
 <head>
 <meta charset="UTF-8">
 <title>이벤트 | 스튜디오U</title>
+
+
 </head>
 <body>
 <c:import url="../default/header.jsp"/>
@@ -15,32 +17,35 @@
 
 
 <div align="center">
-<table style="width:50%;text-align: center;">
-			<tr>
-				<td colspan="3"><b>${dto.title }</b></td>
-			</tr>
-			<tr>
-				<td>작성자 <b>${dto.name }</b></td>
-				<td><fmt:formatDate value="${dto.savedate}" pattern="yyyy-MM-dd" /></td>
-				<td>조회 ${dto.hit }회</td>
-			</tr>
+	<div style="width:50%;text-align: center;">
 			
-			<tr>
-				<td colspan="3"><textarea rows="30" cols="100" name="content" readonly="readonly">${dto.content }</textarea></td>
-			</tr>
+			<div style="text-align: center;"><h2>${dto.title }</h2></div>
 			
-		</table>
+			<br>
+			<div style="border-bottom:1px solid black; text-align: center;">작성자&nbsp;&nbsp; <b>${dto.name }</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<fmt:formatDate value="${dto.savedate}" pattern="yyyy-MM-dd" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;조회 ${dto.hit }회</div>
+			
+			<br>
+			<br>
+			
+			<div style="text-align: center;">
+			<textarea rows="30" cols="100" name="content" readonly="readonly" style="text-align:center; border-color: white; outline-style: none;">${dto.content }</textarea>
+			</div>
+			
+			
+			<div>
 				<c:if test="${admin!=null }">
-				<div style="width:35%;text-align:left;">
+			
+				<div style="width:50%; float:left; text-align: left">
+					<%-- <button onclick="location.href='eventModify?num=${dto.num}'">수정</button> &nbsp;&nbsp; --%>
 					<button onclick="location.href='eventModify?num=${dto.num}'">수정</button> &nbsp;&nbsp;
 					<button onclick="location.href='eventDel?num=${dto.num}'">삭제</button>
 				</div>
 				</c:if>
-			<div style="width:35%; text-align: right;">
-				<button onclick="location.href='event'">목록으로</button>&nbsp;&nbsp;
-				<button onclick="location.href='eventReplyView?num=${dto.num}'">답글달기</button>&nbsp;&nbsp;
+				<div style="width:50%; float:right; text-align: right;">
+					<button onclick="location.href='event'">목록으로</button>&nbsp;&nbsp;
+					<button onclick="location.href='eventReplyView?num=${dto.num}'">답글달기</button>&nbsp;&nbsp;
+				</div>
 			</div>
-		
 			<hr style="width:50%;">
 		
 		<table style="width:50%;text-align: center;">
@@ -56,8 +61,8 @@
 	</table>
 			
 			
-			
-	</div>
+	</div>	
+</div>
 	
 
 </body>

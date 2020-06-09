@@ -34,20 +34,7 @@ function checkDisable(form)
 
 
 </script>
-<style>
 
-
-	/* .bodywrap_header { position: static; }
-    .standing_point_select { margin-top: 40px; width: 100%; }
-	.standing_point_select_title { font-weight: 14px; font-weight: bold; padding-bottom: 5px; }
-	.standing_point_select_textarea { width: 100%; padding-bottom: 10px; }
-	.standing_point_select_textarea textarea { width: 962px; height: 100px; padding: 20px; resize: none; border: 1px solid #ddd; color: #494848; line-height: 18px; }
-	.standing_point_select_chk { color: #494848; }
-	.standing_point_select_chk span { cursor: pointer; display: inline-block; }
-	.standing_point_select_chk img { margin-right: 5px; width: 15px; vertical-align: sub; }
- */
-
-</style>
 </head>
 <body>
 <c:import url="../default/header.jsp"/>

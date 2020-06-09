@@ -22,7 +22,8 @@
 			<div style="text-align: center;"><h2>${dto.title }</h2></div>
 			
 			<br>
-			<div style="border-bottom:1px solid black; text-align: center;">작성자&nbsp;&nbsp; <b>${dto.name }</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<fmt:formatDate value="${dto.savedate}" pattern="yyyy-MM-dd" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;조회 ${dto.hit }회</div>
+			<br>
+			<div style="border-bottom:1px solid #BDBDBD; text-align: center;">작성자&nbsp;&nbsp; <b>${dto.name }</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<fmt:formatDate value="${dto.savedate}" pattern="yyyy-MM-dd" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;조회 ${dto.hit }회&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;댓글 ${dto.replyhit }건</div>
 			
 			<br>
 			<br>
@@ -31,13 +32,15 @@
 			<textarea rows="30" cols="100" name="content" readonly="readonly" style="text-align:center; border-color: white; outline-style: none;">${dto.content }</textarea>
 			</div>
 			
+			<br>
+			<br>
+			<br>
 			
 			<div>
 				<c:if test="${admin!=null }">
 			
 				<div style="width:50%; float:left; text-align: left">
-					<%-- <button onclick="location.href='eventModify?num=${dto.num}'">수정</button> &nbsp;&nbsp; --%>
-					<button onclick="location.href='eventModify?num=${dto.num}'">수정</button> &nbsp;&nbsp;
+					<button onclick="location.href='eventModify?num=${dto.num}'">수정</button> &nbsp;&nbsp; 
 					<button onclick="location.href='eventDel?num=${dto.num}'">삭제</button>
 				</div>
 				</c:if>
@@ -46,24 +49,28 @@
 					<button onclick="location.href='eventReplyView?num=${dto.num}'">답글달기</button>&nbsp;&nbsp;
 				</div>
 			</div>
-			<hr style="width:50%;">
 		
+		<br>
+		<br>
+		<br>
 		<table style="width:50%;text-align: center;">
 		<c:forEach items="${relist }" var = "redto">
-		<tr>
+		<tr style="border-top:1px solid #BDBDBD;">
 			<td style="background-color: #EAEAEA;">${redto.name }</td>
-			<td><textarea style="border:none;"rows="3" cols="100" readonly="readonly">${redto.content }</textarea></td>
+			<td><textarea style="text-align:center; border:none; outline-style: none;"rows="3" cols="120" readonly="readonly" >${redto.content }</textarea></td>
 		<c:if test="${redto.name.equals(userId) || admin!=null}">
-			<td style="width:20%;"><button onclick="location.href='eReplyDel?num=${redto.num}&&idgroup=${redto.idgroup }'">삭제</button></td>
+			<td><button onclick="location.href='eReplyDel?num=${redto.num}&&idgroup=${redto.idgroup }'">x</button></td>
 		</c:if>
 		</tr>
 		</c:forEach>
 	</table>
-			
+	<br>		
+	<br>		
 			
 	</div>	
 </div>
 	
+<c:import url="../default/footer.jsp"/>
 
 </body>
 </html>

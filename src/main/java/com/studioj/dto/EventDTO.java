@@ -6,7 +6,13 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class EventDTO {
-	private int num,hit,idgroup,step,indent;
+	private int num,hit,replyhit, idgroup,step,indent;
+	public int getReplyhit() {
+		return replyhit;
+	}
+	public void setReplyhit(int replyhit) {
+		this.replyhit = replyhit;
+	}
 	private String name,title,content;
 	private Date savedate;
 	public int getNum() {

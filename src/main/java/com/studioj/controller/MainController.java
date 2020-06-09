@@ -144,7 +144,13 @@ public class MainController {
 		model.addAttribute("request",request);
 		ss = ac.getBean("memberDelImpl",MemberDelImpl.class);
 		int result = ss.execute(model);
-		if(result == 1) return "redirect:index";
+		if(result == 1) {
+			HttpSession session = request.getSession();
+			if(session.getAttribute("userId") != null) {
+				session.invalidate();
+			}
+			return "redirect:index";
+		}
 		else return "studioj/memberInfo";
 	}
 	

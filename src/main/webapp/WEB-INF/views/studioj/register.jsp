@@ -6,7 +6,15 @@
 <head>
 <meta charset="UTF-8">
 <title>회원 가입 약관 | 스튜디오U</title>
-<script type="text/javascript">
+<!-- css 링크 -->
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/login.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/studioj02.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/studioj03.css">
+
+<!-- <script type="text/javascript">
 function chkData(){
 	var chk01 = document.getElementById("chk01").checked;
 	var chk02 = document.getElementById("chk02").checked;
@@ -20,18 +28,29 @@ function chkData(){
 		fo.submit();
 	}
 }
-</script>
+</script> -->
+
+<style type="text/css">
+
+.bodywrap_header { position: static; }
+.mbskin { padding: 100px; width: 600px; margin: 0 auto; }
+
+</style>
+
 </head>
 <body>
 	<c:import url="../default/header.jsp"/>
 	<c:import url="../default/header2.jsp"/>
+
+<div id="bodywrap_studio">
+	<div class="mbskin">
 	
-	<div align="center">
-	
-	<form id="fo" action="register_view" method="GET">
-		<p style="color: red;">회원가입약관 및 개인정보처리방침안내의 내용에 동하셔야 회원가 하실 수 있습니다.</p><br>
-		<h2>회원가입약관</h2><br>
-		<textarea rows="13" cols="100" readonly>
+	<form name="fregister" id="fregister" action="register_view"
+			onsubmit="return fregister_submit(this);" method="GET" autocomplete="off">
+		<p>회원가입약관 및 개인정보처리방침안내의 내용에 동하셔야 회원가입 하실 수 있습니다.</p>
+		<section id="fregister_term">
+			<h2>회원가입약관</h2>
+			<textarea readonly>
 제1조(목적)
 이 약관은 주식회사 푸드나무(전자상거래 사업자)가 운영하는 랭킹닭컴, 개근질닷컴, 닭쿡, 바디프로필스튜디오유 사이버 몰(이하 "몰"이라 한다)에서 제공하는 인터넷 관련 서비스(이하 "서비스"라 한다)를 이용함에 있어 사이버 몰과 이용자의 권리·의무 및 책임사항을 규정함을 목적으로 합니다.
 
@@ -251,31 +270,69 @@ function chkData(){
 ①"몰"과 이용자간에 발생한 전자상거래 분쟁에 관한 소송은 제소 당시의 이용자의 주소에 의하고, 주소가 없는 경우에는 거소를 관할하는 지방법원의 전속관할로 합니다. 다만, 제소 당시 이용자의 주소 또는 거소가 분명하지 않거나 외국 거주자의 경우에는 민사소송법상의 관할법원에 제기합니다.
 
 ②"몰"과 이용자간에 제기된 전자상거래 소송에는 한국법을 적용합니다.
-</textarea>
-		<br>
-		<label>회원가입 약관에 동의합니다</label>
-		<input type="checkbox" name="chk01" id="chk01" value="">
-		<br>
-		<br>
-		<br>
-		<h2>개인정보처리방침안내</h2><br>
-		<table border="1">
-			<tr>
-				<th>목적</th><th>항목</th><th>보유기간</th>
-			</tr>
-			<tr>
-				<td>이용자 식별 및 본인여부 확인</td><td>아이디, 이름, 비밀번호</td><td>회원 탈퇴 시까지</td>
-			</tr>
-			<tr>
-				<td>고객서비스 이용에 관한 통지,<br>CS대응을 위한 이용자 식별</td><td>연락처(이메일, 휴대전화번호)</td><td>회원 탈퇴 시까지</td>
-			</tr>
-		</table><br>
-		<label>개인정보처리방침안내의 내용에 동의합니다.</label>
-		<input type="checkbox" name="chk02" id="chk02" value=""><br><br>
-		<input type="button" value="회원가입" onclick="chkData();">
+			</textarea>
+			
+			<fieldset class="fregister_agree">
+				<label for="agree11">회원가입약관의 내용에 동의합니다.</label>
+				<input type="checkbox" name="agree" id="agree11" value="1">
+			</fieldset>
+		</section>
+		
+		<section id="fregister_private">
+			<h2>개인정보처리방침안내</h2>
+			<div class="tbl_head01 tbl_wrap">
+				<table>
+					<caption>개인정보처리방침안내</caption>
+					<thead>
+						<tr>
+							<th>목적</th><th>항목</th><th>보유기간</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>이용자 식별 및 본인여부 확인</td><td>아이디, 이름, 비밀번호</td><td>회원 탈퇴 시까지</td>
+						</tr>
+						<tr>
+							<td>고객서비스 이용에 관한 통지,<br>CS대응을 위한 이용자 식별</td><td>연락처(이메일, 휴대전화번호)</td><td>회원 탈퇴 시까지</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			
+			<fieldset class="fregister_agree">
+				<label for="agree21">개인정보처리방침안내의 내용에 동의합니다.</label>
+				<input type="checkbox" name="agree2" id="agree21" value="1">
+			</fieldset>
+		</section>
+		
+			<div class="btn_confirm">
+				<input type="submit" class="btn_submit" value="회원가입">
+			</div>
 	</form>
+	
 	</div>
+</div>
+	
 	<c:import url="../default/footer.jsp"/>
+	
+	<script type="text/javascript">
+	function fregister_submit(f)
+	{
+		if (!f.agree.checked) {
+			alert("회원가입약관의 내용에 동의하셔야 회원가입 하실 수 있습니다.");
+			f.agree.focus();
+			return false;
+		}
+
+		if (!f.agree2.checked) {
+			alert("개인정보처리방침안내의 내용에 동의하셔야 회원가입 하실 수 있습니다.");
+			f.agree2.focus();
+			return false;
+		}
+
+		return true;
+	}
+	</script>
 	
 </body>
 </html>

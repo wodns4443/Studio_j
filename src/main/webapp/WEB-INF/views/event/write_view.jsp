@@ -8,51 +8,46 @@
 <head>
 <meta charset="UTF-8">
 <title>이벤트 | 스튜디오U</title>
-<style>
 
-  table {
-    
-    border-top: 1px solid #C6C6C6;
-    border-collapse: collapse;
-  }
-  th, td {
-    border-bottom: 1px solid #C6C6C6;
-    padding: 10px;
-  }
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/studioj02.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/studioj03.css">
 
-</style>
 </head>
 <body>
 <c:import url="../default/header.jsp"/>
 <fmt:requestEncoding value="utf-8"/>
 <c:import url="../default/header2.jsp"/>
 
-<div align="center">
-	<h3>이벤트 글쓰기</h3>
+<div class="bodywrap_studio">
+	<section id="bo_w">
+	<h2 id="container_title">이벤트 글쓰기</h2>
 	<form action="event_write_save" method="post">
-		<table style="width:60%;">
-			<tr>
-				<td style="width:10%;background-color: #EAEAEA;text-align: center;">제목</td>
-				<td colspan="2"><input type="text" name="title" style="width:90%;"></td>
-			</tr>
-			<tr>
-				<td style="width:10%;background-color: #EAEAEA;text-align: center;">내용</td>
-				<td colspan="2"><textarea rows="35"  name="content" style="width:90%;"></textarea></td>
-			</tr>
+		<div class="tbl_frm01 tbl_wrap">
+		<table>
+			<tbody>
+				<tr>
+					<th>제목</th>
+					<td><input type="text" name="title" class="frm_input required"></td>
+				</tr>
+				<tr>
+					<th>내용</th>
+					<td><textarea name="content" style="width: 700px; height: 300px;"></textarea></td>
+				</tr>
+			</tbody>
 		</table>
-		<br>
-			<div style="text-align: center;">
-				
-				<input type="button" onclick="location.href='event'" value = "취소">&nbsp;&nbsp;
-				<input type="submit" value="작성 완료">
-				
-			</div>
+		</div>
 		
-		
-	
+		<div class="btn_confirm">
+			<a href="event" class="btn_cancel">취소</a>
+			<input type="submit" value="작성완료" class="btn_submit">
+		</div>
 	</form>
-
+	</section>
 </div>
+
+<c:import url="../default/footer.jsp"/>
 
 </body>
 </html>

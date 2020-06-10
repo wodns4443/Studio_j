@@ -33,7 +33,7 @@ public class MemberUserCheckImpl implements MemberService{
 		if(result == 0) {
 			HttpSession session = request.getSession();
 			String chkId = request.getParameter("id");
-			String admin = "123";
+			String admin = "StudioU";
 			if(chkId.equals(admin)) {
 				session.setAttribute("admin", request.getParameter("id"));
 				session.setAttribute("userId", request.getParameter("id"));

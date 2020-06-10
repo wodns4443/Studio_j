@@ -22,6 +22,14 @@ public class InquireSearchImpl implements InquireService{
 	public int execute(Model model) {
 		Map<String, Object> map = model.asMap();
 		HttpServletRequest request = (HttpServletRequest) map.get("request");
+	
+		
+		
+		
+		
+		
+		
+		
 		String searchType =request.getParameter("searchType");
 		String value = "%"+request.getParameter("searchValue")+"%";
 		if(searchType.equals("title")) {

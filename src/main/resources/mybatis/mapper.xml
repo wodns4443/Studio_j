@@ -61,7 +61,7 @@
 	</update>
 	
 	<select id = "searchTitle" resultType="idto">
-		select * from studioj_inquire where title like #{str}
+		select * from studioj_inquire where title like #{str} 
 	</select>
 	<select id = "searchContent" resultType="idto">
 		select * from studioj_inquire where content like #{str}
@@ -69,6 +69,9 @@
 	<select id = "searchName" resultType="idto">
 		select * from studioj_inquire where name like #{str}
 	</select>
+	
+	
+	
 	<update id="inquireModify">
 		update studioj_inquire set title=#{title}, content=#{content} where num=#{num}
 	</update>

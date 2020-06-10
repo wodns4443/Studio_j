@@ -8,6 +8,10 @@
 <head>
 <meta charset="UTF-8">
 <title>게시글 | 스튜디오U</title>
+<link rel="stylesheet" href="http://studiou.co.kr/theme/basic/css/default_shop.css?ver=161020">
+<link rel="stylesheet" href="http://studiou.co.kr/skin/board/studioReserve/style.css?ver=161020">
+
+
 </head>
 <body>
 <c:import url="../default/header.jsp"/>
@@ -22,7 +26,7 @@
 	<br>
 	<br>
 	<div style="text-align: center;">
-		<textarea rows="30" cols="100" name="content" readonly="readonly" style="text-align:center; border-color: white; outline-style: none;">${dto.content }</textarea>
+		<textarea rows="25" cols="100" name="content" readonly="readonly" style="text-align:center; border-color: white; outline-style: none;">${dto.content }</textarea>
 	</div>
 	<br>
 	<br>
@@ -32,24 +36,65 @@
 	<c:choose>
 		<c:when test="${userId== dto.name}">
 			<div style="width:50%; float:left; text-align: left">
-				<button onclick="location.href='inquireModify?num=${dto.num}'">수정</button> &nbsp;&nbsp;
-				<button onclick="location.href='inquireDel?num=${dto.num}'">삭제</button>
+				<a href="inquireModify?num=${dto.num}" class="btn_b01">수정</a> &nbsp;&nbsp;
+				<a href="inquireDel?num=${dto.num}" class="btn_b02">삭제</a>
 			</div>
 		</c:when>
 		<c:when test="${admin!=null }">
 			<div style="width:50%; float:left; text-align: left;">
-				<button onclick="location.href='inquireDel?num=${dto.num}'">삭제</button>
+				<a href="inquireDel?num=${dto.num}" class="btn_b02">삭제</a>
 			</div>
 		</c:when>
 	</c:choose>		
 			<div style="width:50%; float:right; text-align: right;">
-				<button onclick="location.href='inquire'">목록으로</button>&nbsp;&nbsp;
-				<button onclick="location.href='replyView?num=${dto.num}'">답글달기</button>&nbsp;&nbsp;
+				<a href="inquire" class="btn_b01">목록</a> &nbsp;&nbsp;
+				<a href="replyView?num=${dto.num}" class="btn_b02">답글달기</a>
 			</div>
 	</div>	
 	<br>	
 	<br>	
 	<br>	
+	
+	<section id="bo_vc">
+    <h2>댓글목록</h2>
+    <c:forEach items="${relist }" var = "redto">
+    
+    <article id="c_101">
+        <header style="z-index:2">
+            <!-- <h1>스튜디오u님의 댓글</h1> -->
+            <span style="font-weight: bold;">${redto.name }</span>
+                       
+             
+        <c:if test="${redto.name.equals(userId) || admin!=null}">
+            <span class="bo_vc_hdinfo">
+			<button onclick="location.href='replyDel?num=${redto.num}&&idgroup=${redto.idgroup }'">삭제</button>
+		</span>
+		</c:if>
+                
+         </header>
+
+        <!-- 댓글 출력 -->
+        <p>
+                 ${redto.content }      
+		</p>
+    </article>
+   	</c:forEach>
+        
+</section>
+	
+	
+	
+	
+	
+<%-- 	
+	
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	
 	<div style="width: 50%;text-align: center;">
 		<table style="text-align: center;">
 			<c:forEach items="${relist }" var = "redto">
@@ -65,6 +110,7 @@
 	</div>
 		<br>
 		<br>
+ --%>
 	</div>
 </div>
 <c:import url="../default/footer.jsp"/>

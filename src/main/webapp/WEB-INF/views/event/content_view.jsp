@@ -8,6 +8,8 @@
 <head>
 <meta charset="UTF-8">
 <title>이벤트 | 스튜디오U</title>
+<link rel="stylesheet" href="http://studiou.co.kr/theme/basic/css/default_shop.css?ver=161020">
+<link rel="stylesheet" href="http://studiou.co.kr/skin/board/studioReserve/style.css?ver=161020">
 
 
 </head>
@@ -29,7 +31,7 @@
 			<br>
 			
 			<div style="text-align: center;">
-			<textarea rows="30" cols="100" name="content" readonly="readonly" style="text-align:center; border-color: white; outline-style: none;">${dto.content }</textarea>
+			<textarea rows="25" cols="100" name="content" readonly="readonly" style="text-align:center; border-color: white; outline-style: none;">${dto.content }</textarea>
 			</div>
 			
 			<br>
@@ -40,33 +42,53 @@
 				<c:if test="${admin!=null }">
 			
 				<div style="width:50%; float:left; text-align: left">
-					<button onclick="location.href='eventModify?num=${dto.num}'">수정</button> &nbsp;&nbsp; 
-					<button onclick="location.href='eventDel?num=${dto.num}'">삭제</button>
+					<a href="eventModify?num=${dto.num}" class="btn_b01">수정</a> &nbsp;&nbsp;
+					<a href="eventDel?num=${dto.num}" class="btn_b02">삭제</a>
 				</div>
 				</c:if>
 				<div style="width:50%; float:right; text-align: right;">
-					<button onclick="location.href='event'">목록으로</button>&nbsp;&nbsp;
-					<button onclick="location.href='eventReplyView?num=${dto.num}'">답글달기</button>&nbsp;&nbsp;
+					<a href="event" class="btn_b01">목록</a> &nbsp;&nbsp;
+					<a href="eventReplyView?num=${dto.num}" class="btn_b02">답글달기</a>
+				
+				
 				</div>
 			</div>
 		
 		<br>
 		<br>
 		<br>
-		<table style="width:50%;text-align: center;">
-		<c:forEach items="${relist }" var = "redto">
-		<tr style="border-top:1px solid #BDBDBD;">
-			<td style="background-color: #EAEAEA;">${redto.name }</td>
-			<td><textarea style="text-align:center; border:none; outline-style: none;"rows="3" cols="120" readonly="readonly" >${redto.content }</textarea></td>
-		<c:if test="${redto.name.equals(userId) || admin!=null}">
-			<td><button onclick="location.href='eReplyDel?num=${redto.num}&&idgroup=${redto.idgroup }'">x</button></td>
+		
+		<section id="bo_vc">
+    <h2>댓글목록</h2>
+    <c:forEach items="${relist }" var = "redto">
+    
+    <article id="c_101">
+        <header style="z-index:2">
+            <!-- <h1>스튜디오u님의 댓글</h1> -->
+            <span style="font-weight: bold;">${redto.name }</span>
+                       
+             
+        <c:if test="${redto.name.equals(userId) || admin!=null}">
+            <span class="bo_vc_hdinfo">
+			<button onclick="location.href='replyDel?num=${redto.num}&&idgroup=${redto.idgroup }'">삭제</button>
+		</span>
 		</c:if>
-		</tr>
-		</c:forEach>
-	</table>
-	<br>		
-	<br>		
-			
+                
+         </header>
+
+        <!-- 댓글 출력 -->
+        <p>
+                 ${redto.content }      
+		</p>
+    </article>
+   	</c:forEach>
+        
+</section>
+		
+		
+		
+		
+	
 	</div>	
 </div>
 	

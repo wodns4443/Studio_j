@@ -31,7 +31,7 @@
 			<br>
 			
 			<div style="text-align: center;">
-			<textarea rows="25" cols="100" name="content" readonly="readonly" style="text-align:center; border-color: white; outline-style: none;">${dto.content }</textarea>
+			<textarea rows="20" cols="100" name="content" readonly="readonly" style="border-color: white; outline-style: none;">${dto.content }</textarea>
 			</div>
 			
 			<br>

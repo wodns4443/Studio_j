@@ -57,6 +57,7 @@
 	
 		<button onclick="location.href='imgWriteView'">사진 등록</button>
 	</div>
+	<br>
 	</c:if>
 	
 

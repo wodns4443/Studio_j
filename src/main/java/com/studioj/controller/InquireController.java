@@ -54,6 +54,10 @@ public class InquireController {
 
 	@RequestMapping("write_view")
 	public String write_view(Model model,HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		if(session.getAttribute("userId")==null) {
+			return "studioj/login";
+		}
 		model.addAttribute("request",request);
 		ms = ac.getBean("memberInfoImpl",MemberInfoImpl.class);
 		ms.execute(model);
@@ -104,6 +108,10 @@ public class InquireController {
 
 	@RequestMapping("replyView")
 	public String replyView(HttpServletRequest request, Model model) {
+		HttpSession session = request.getSession();
+		if(session.getAttribute("userId")==null) {
+			return "studioj/login";
+		}
 		model.addAttribute("request", request);
 		is = ac.getBean("inquireReplyViewImpl", InquireReplyViewImpl.class);
 		is.execute(model);

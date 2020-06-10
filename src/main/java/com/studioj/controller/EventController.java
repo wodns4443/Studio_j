@@ -1,6 +1,7 @@
 package com.studioj.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
@@ -80,6 +81,11 @@ public class EventController {
 	}
 	@RequestMapping("eventReplyView")
 	public String eventReplyView(Model model,HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		if(session.getAttribute("userId")==null) {
+			return "studioj/login";
+		}
+		
 		model.addAttribute("request",request);
 		
 		es = ac.getBean("eventReplyViewImpl",EventReplyViewImpl.class);

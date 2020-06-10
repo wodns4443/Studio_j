@@ -61,7 +61,7 @@
 <c:import url="../default/header2.jsp"/>
 
 <div >
-	<table width="100%" align="center" cellpadding="0" cellspacing="0" style="margin: 150px auto; width: 1000px;">
+	<table width="100%" align="center" cellpadding="0" cellspacing="0" style="margin-top: 200px; width: 1000px;">
 	<tbody>
 		<tr>
 		<td>
@@ -144,7 +144,7 @@
 			<!-- 페이징 끝 -->
 			
 			<!--  검색  -->
-			<div class="board_search" style="width:100%">
+			<div class="board_search" style="margin-top:100px; margin-bottom:100px; width:100%">
 			<table border="0" cellpadding="0" cellspacing="0" width="100%">
 				<tbody>
 					<tr>

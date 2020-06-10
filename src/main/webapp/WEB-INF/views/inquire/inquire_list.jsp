@@ -61,7 +61,7 @@
 <c:import url="../default/header2.jsp"/>
 
 <div >
-	<table width="100%" align="center" cellpadding="0" cellspacing="0" style="margin-top: 200px; width: 1000px;">
+	<table width="100%" align="center" cellpadding="0" cellspacing="0" style="margin: 200px auto; width: 1000px;">
 	<tbody>
 		<tr>
 		<td>

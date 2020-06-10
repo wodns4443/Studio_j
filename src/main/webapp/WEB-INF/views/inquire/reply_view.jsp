@@ -7,38 +7,49 @@
 <head>
 <meta charset="UTF-8">
 <title>리플 | 스튜디오U</title>
+
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/studioj02.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/studioj03.css">
+
 </head>
 <body>
 <c:import url="../default/header.jsp"/>
 <c:import url="../default/header2.jsp"/>
 
-<div align="center">
-<h3>답글 달기</h3>
-	<form action="reply" method ="post">
+<div class="bodywrap_studio">
+	<section id="bo_w">
+	<h2 id="container_title">답글 달기</h2>
+	<form action="reply" method="post">
 	<input type="hidden" name="num" value="${dto.num }">
 	<input type="hidden" name="idgroup" value="${dto.idgroup }">
 	<input type="hidden" name="step" value="${dto.step }">
 	<input type="hidden" name="indent" value="${dto.indent }">
-	<table style="width:40%;">
-		<tr>
-			<td style="background-color: #EAEAEA;">작성자</td>
-			<td><input style="border=none;"type="text" name="name" value="${userId }" readOnly></td>
-		</tr>
-		<tr>
-			<td style="background-color: #EAEAEA;">내용</td>
-			<td><textarea rows="6" cols="100" name="content"></textarea></td>
-		</tr>
-		<tr>
-			<td colspan="2" style="text-align: center;">
-			<input type="button" onclick="location.href='contentView?num=${dto.num}'" value = "취소">&nbsp;&nbsp;
-			<input type="submit" value="작성 완료">
-			</td>
-		</tr>
+		<div class="tbl_frm01 tbl_wrap">
+		<table>
+			<tbody>
+				<tr>
+					<th>작성자</th>
+					<td><input type="text" name="name" value="${userId }" class="frm_input required" readonly="readonly"></td>
+				</tr>
+				<tr>
+					<th>내용</th>
+					<td><textarea name="content" style="width: 700px; height: 300px;"></textarea></td>
+				</tr>
+			</tbody>
+		</table>
+		</div>
 		
-	</table>
+		<div class="btn_confirm">
+			<a href="contentView?num=${dto.num}" class="btn_cancel">취소</a>
+			<input type="submit" value="작성완료" class="btn_submit">
+		</div>
 	</form>
-	
+	</section>
 </div>
+
+<c:import url="../default/footer.jsp"/>
 
 </body>
 </html>	

@@ -18,6 +18,7 @@
 <body>
 <c:import url="../default/header.jsp"/>
 <%-- <c:import url="../default/header2.jsp"/> --%>
+<div style="margin:100px;"></div>
 
 <div id="mb_login" class="mbskin">
 

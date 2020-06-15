@@ -48,7 +48,7 @@
 		</form>
 	</div>
 </div>
-
+<div style="margin:140px;"></div>
 <c:import url="../default/footer.jsp"/>
 
 </body>

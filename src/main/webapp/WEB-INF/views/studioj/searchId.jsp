@@ -23,6 +23,7 @@
 <c:import url="../default/header.jsp"/>
 <c:import url="../default/header2.jsp"/>
 
+
 <div class="bodywrap_studio">
 	<div class="mbskin">
 		<form action="checkId">
@@ -45,7 +46,7 @@
 		</form>
 	</div>
 </div>
-
+<div style="margin:200px;"></div>
 <c:import url="../default/footer.jsp"/>
 
 </body>

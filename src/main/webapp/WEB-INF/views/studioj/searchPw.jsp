@@ -59,7 +59,7 @@
 		</form>
 	</div>
 </div>
-
+<div style="margin:120px;"></div>
 <c:import url="../default/footer.jsp"/>
 
 </body>
